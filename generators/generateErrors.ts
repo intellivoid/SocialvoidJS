@@ -1,3 +1,5 @@
+import { format } from "./format.ts";
+
 interface Errorr {
   _: string;
   description: string;
@@ -46,4 +48,5 @@ code += JSON.stringify(map)
 code += ";\n\n";
 code += "export default map;";
 
-Deno.writeTextFileSync("errors.ts", code);
+Deno.writeTextFileSync("../socialvoid/errors.ts", code);
+await format();
