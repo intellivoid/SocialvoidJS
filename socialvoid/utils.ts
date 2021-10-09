@@ -3,7 +3,7 @@ import Request from "./Request.ts";
 import Response from "./Response.ts";
 // @deno-types="https://deno.land/x/otpauth@v7.0.6/dist/otpauth.d.ts"
 import * as OTPAuth from "https://deno.land/x/otpauth@v7.0.6/dist/otpauth.esm.js";
-import { map, SocialvoidError } from "./errors/mod.ts";
+import map, { SocialvoidError } from "./errors.ts";
 
 export function throwError(code: number, message: string) {
   if (code in map) {
