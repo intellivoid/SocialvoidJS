@@ -1,7 +1,7 @@
 import Request from "../Request.ts";
 import * as types from "../types/mod.ts";
 import MethodBase from "./MethodBase.ts";
-import { NAME, VERSION, PLATFORM } from "../constants.ts";
+import { NAME, PLATFORM, VERSION } from "../constants.ts";
 
 export default class Session extends MethodBase {
   /*
@@ -19,7 +19,7 @@ export default class Session extends MethodBase {
     privateHash: string,
     name = NAME,
     version = VERSION,
-    platform = PLATFORM
+    platform = PLATFORM,
   ) {
     return this.client.invokeRequest(
       new Request("session.create", {
@@ -28,7 +28,7 @@ export default class Session extends MethodBase {
         name,
         version,
         platform,
-      })
+      }),
     );
   }
 
@@ -37,7 +37,7 @@ export default class Session extends MethodBase {
    */
   async get() {
     return types.Session.fromObject(
-      await this.client.invokeRequest(new Request("session.get"), true)
+      await this.client.invokeRequest(new Request("session.get"), true),
     );
   }
 
@@ -62,7 +62,7 @@ export default class Session extends MethodBase {
         password,
         otp,
       }),
-      true
+      true,
     );
   }
 
@@ -80,7 +80,7 @@ export default class Session extends MethodBase {
     username: string,
     password: string,
     firstName: string,
-    lastName?: string
+    lastName?: string,
   ) {
     return types.Peer.fromObject(
       await this.client.invokeRequest(
@@ -92,8 +92,8 @@ export default class Session extends MethodBase {
           first_name: firstName,
           last_name: lastName,
         }),
-        true
-      )
+        true,
+      ),
     );
   }
 }

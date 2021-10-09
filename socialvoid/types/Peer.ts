@@ -8,7 +8,7 @@ export default class Peer extends TypeBase {
     public name: string,
     public username: string,
     public displayPictureSizes: DisplayPictureSize[],
-    public flags: string[]
+    public flags: string[],
   ) {
     super();
   }
@@ -22,7 +22,7 @@ export default class Peer extends TypeBase {
       obj.display_picture_sizes.map((obj: any) =>
         DisplayPictureSize.fromObject(obj)
       ),
-      obj.flags
+      obj.flags,
     );
   }
 }

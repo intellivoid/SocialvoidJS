@@ -4,7 +4,7 @@ export default class Request {
   constructor(
     public method: string,
     public params?: any,
-    public notification = false
+    public notification = false,
   ) {
     this.id = notification ? undefined : String(Date.now());
   }

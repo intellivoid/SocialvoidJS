@@ -11,7 +11,7 @@ export default class CDN extends MethodBase {
     });
 
     return Document.fromObject(
-      (await this.client.invokeCDNRequest(form)).results
+      (await this.client.invokeCDNRequest(form)).results,
     );
   }
 

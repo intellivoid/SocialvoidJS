@@ -9,7 +9,7 @@ export default class Document extends TypeBase {
     public fileSize: string,
     public fileType: string,
     public flags: string[],
-    public created: Date
+    public created: Date,
   ) {
     super();
   }
@@ -22,7 +22,7 @@ export default class Document extends TypeBase {
       obj.file_size,
       obj.file_type,
       obj.flags,
-      unixTimestampToDate(obj.created_timestamp)
+      unixTimestampToDate(obj.created_timestamp),
     );
   }
 }

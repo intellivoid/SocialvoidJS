@@ -1,6 +1,6 @@
 import Request from "./Request.ts";
 import Response from "./Response.ts";
-import { serializeRequests, parseResponses, answerChallenge } from "./utils.ts";
+import { answerChallenge, parseResponses, serializeRequests } from "./utils.ts";
 import { throwError } from "./utils.ts";
 
 interface Session {
@@ -15,7 +15,7 @@ export default class BaseClient {
 
   constructor(
     public readonly rpcEndpoint: string,
-    public readonly cdnEndpoint: string
+    public readonly cdnEndpoint: string,
   ) {}
 
   async sessionId() {
@@ -29,7 +29,7 @@ export default class BaseClient {
         client_public_hash: this._session.publicHash,
         challenge_answer: await answerChallenge(
           this._session.privateHash,
-          this._session.challenge
+          this._session.challenge,
         ),
       },
     };
@@ -52,13 +52,13 @@ export default class BaseClient {
   async invokeRequests(...requests: Request[]) {
     if (!requests) {
       throw new Error(
-        "The parameter `requests` cannot be `undefined` or empty"
+        "The parameter `requests` cannot be `undefined` or empty",
       );
     }
 
     const toReturn = new Array<Response>();
     const result = parseResponses(
-      await this.send(serializeRequests(...requests))
+      await this.send(serializeRequests(...requests)),
     );
 
     if (result) {

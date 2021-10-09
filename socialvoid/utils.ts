@@ -21,7 +21,7 @@ export function bufferToHex(buffer: ArrayBuffer) {
 
 export async function sha1HexDigest(data: string) {
   return bufferToHex(
-    await crypto.subtle.digest("SHA-1", new TextEncoder().encode(data))
+    await crypto.subtle.digest("SHA-1", new TextEncoder().encode(data)),
   );
 }
 
@@ -50,8 +50,8 @@ export function parseResponses(body: any): Response | Response[] | undefined {
 
   return Array.isArray(body)
     ? body
-        .filter((item: any) => "id" in item)
-        .map((item: any) => new Response(item))
+      .filter((item: any) => "id" in item)
+      .map((item: any) => new Response(item))
     : "id" in body
     ? new Response(body)
     : undefined;

@@ -13,7 +13,7 @@ const client = new Client();
     await client.session.authenticateUser(
       prompt("Username:")!,
       prompt("Password:")!,
-      prompt("OTP (if set):")!
+      prompt("OTP (if set):")!,
     );
   }
 

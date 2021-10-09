@@ -5,7 +5,7 @@ export default class HelpDocument extends TypeBase {
   constructor(
     public id: string,
     public text: string,
-    public entities: TextEntity[]
+    public entities: TextEntity[],
   ) {
     super();
   }
@@ -14,7 +14,7 @@ export default class HelpDocument extends TypeBase {
     return new this(
       obj.id,
       obj.text,
-      obj.entities.map((obj: any) => TextEntity.fromObject(obj))
+      obj.entities.map((obj: any) => TextEntity.fromObject(obj)),
     );
   }
 }

@@ -5,7 +5,7 @@ export default class DisplayPictureSize extends TypeBase {
   constructor(
     public width: number,
     public height: number,
-    public document: Document
+    public document: Document,
   ) {
     super();
   }

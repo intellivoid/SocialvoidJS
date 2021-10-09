@@ -7,7 +7,7 @@ export default class Session extends TypeBase {
     public flags: string[],
     public authenticated: boolean,
     public created: Date,
-    public expires: Date
+    public expires: Date,
   ) {
     super();
   }
@@ -18,7 +18,7 @@ export default class Session extends TypeBase {
       obj.flags,
       obj.authenticated,
       unixTimestampToDate(obj.created),
-      unixTimestampToDate(obj.expires)
+      unixTimestampToDate(obj.expires),
     );
   }
 }

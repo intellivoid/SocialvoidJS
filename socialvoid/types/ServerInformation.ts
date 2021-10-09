@@ -7,7 +7,7 @@ export default class ServerInformation extends TypeBase {
     public cdnServer: string,
     public uploadMaxFileSize: string,
     public unauthorizedSessionTTL: string,
-    public authorizedSessionTTL: number
+    public authorizedSessionTTL: number,
   ) {
     super();
   }
@@ -19,7 +19,7 @@ export default class ServerInformation extends TypeBase {
       obj.cdn_server,
       obj.upload_max_file_size,
       obj.unauthorized_session_ttl,
-      obj.authorized_session_ttl
+      obj.authorized_session_ttl,
     );
   }
 }

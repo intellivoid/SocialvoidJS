@@ -7,11 +7,11 @@ import ServerInformation from "./ServerInformation.ts";
 import Session from "./Session.ts";
 
 export {
-  Document,
   DisplayPictureSize,
-  Peer,
+  Document,
   HelpDocument,
-  TextEntity,
+  Peer,
   ServerInformation,
   Session,
+  TextEntity,
 };

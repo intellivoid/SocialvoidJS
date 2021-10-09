@@ -5,7 +5,8 @@
 # Features
 
 - Everything works on both Deno and browser.
-- Multiple ways to store session and other data: MemoryStore, FileStore, LocalStorageStore and the ones you define!
+- Multiple ways to store session and other data: MemoryStore, FileStore,
+  LocalStorageStore and the ones you define!
 - Socialvoid types in classes and applicable for instanceof.
 - Most thrown errors can be used with instanceof.
 - CDN upload and download support.

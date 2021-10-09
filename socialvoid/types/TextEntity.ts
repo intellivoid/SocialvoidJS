@@ -5,7 +5,7 @@ export default class TextEntity extends TypeBase {
     public type: string,
     public offset: number,
     public length: number,
-    public value?: string
+    public value?: string,
   ) {
     super();
   }

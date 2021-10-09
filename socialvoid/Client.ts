@@ -1,14 +1,14 @@
 import { IS_BROWSER } from "./constants.ts";
 import {
-  Store,
-  MemoryStore,
+  FileName,
   FileStore,
+  LocalStorageKey,
   LocalStorageStore,
   Memory,
-  LocalStorageKey,
-  FileName,
+  MemoryStore,
+  Store,
 } from "./stores/mod.ts";
-import { Help, Cloud, Network, Session, Account, CDN } from "./methods/mod.ts";
+import { Account, CDN, Cloud, Help, Network, Session } from "./methods/mod.ts";
 import BaseClient from "./BaseClient.ts";
 import { newHash } from "./utils.ts";
 
@@ -25,20 +25,19 @@ export default class Client extends BaseClient {
   constructor(
     store: Memory | FileName | LocalStorageKey | Store = "main",
     rpcEndpoint = "http://socialvoid.qlg1.com:5601",
-    cdnEndpoint = "http://socialvoid.qlg1.com:5602"
+    cdnEndpoint = "http://socialvoid.qlg1.com:5602",
   ) {
     super(rpcEndpoint, cdnEndpoint);
 
-    this.store =
-      typeof store === "undefined"
+    this.store = typeof store === "undefined"
+      ? new MemoryStore()
+      : typeof store === "string"
+      ? store == ":memory:"
         ? new MemoryStore()
-        : typeof store === "string"
-        ? store == ":memory:"
-          ? new MemoryStore()
-          : IS_BROWSER
-          ? new LocalStorageStore(store)
-          : new FileStore(store)
-        : store;
+        : IS_BROWSER
+        ? new LocalStorageStore(store)
+        : new FileStore(store)
+      : store;
 
     const session = this.store.get("session");
 

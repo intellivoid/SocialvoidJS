@@ -7,4 +7,4 @@ export type Memory = ":memory:";
 export type FileName = string;
 export type LocalStorageKey = string;
 
-export { Store, FileStore, MemoryStore, LocalStorageStore };
+export { FileStore, LocalStorageStore, MemoryStore, Store };
