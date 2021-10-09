@@ -1,4 +1,4 @@
-import { crypto } from "https://deno.land/std@0.110.0/crypto/mod.ts";
+// import { crypto } from "https://deno.land/std@0.110.0/crypto/mod.ts";
 import Request from "./Request.ts";
 import Response from "./Response.ts";
 // @deno-types="https://deno.land/x/otpauth@v7.0.6/dist/otpauth.d.ts"
