@@ -3,6 +3,10 @@ export { writeFileSync as writeTextFileSync } from "fs";
 import { readFileSync } from "fs";
 import { randomBytes } from "crypto";
 import jsSHA from "jssha";
+import fetch from "node-fetch";
+
+// @ts-ignore
+globalThis.fetch = fetch;
 
 export const os = process.platform;
 
