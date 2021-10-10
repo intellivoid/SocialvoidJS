@@ -1,0 +1,210 @@
+{
+  "ServerInformation": {
+    "network_name": {
+      "type": "string",
+      "description": "The name of the network, eg; \"Socialvoid\""
+    },
+    "protocol_version": {
+      "type": "string",
+      "description": "The version of the protocol standard that the server is using, eg; \"1.0\""
+    },
+    "cdn_server": {
+      "type": "string",
+      "description": "The HTTP URL Endpoint for the CDN server of the network"
+    },
+    "upload_max_file_size": {
+      "type": "number",
+      "description": "The maximum size of a file that you can upload to the CDN Server (in bytes)"
+    },
+    "unauthorized_session_ttl": {
+      "type": "number",
+      "description": "The maximum time-to-live (in seconds) that an unauthorized session may have. The server will often reset the expiration whenever the session is used."
+    },
+    "authorized_session_ttl": {
+      "type": "number",
+      "description": "The maximum time-to-live (in seconds) that an authorized session may have. The server will often reset the expiration whenever the session is used."
+    },
+    "retrieve_likes_max_limit": {
+      "type": "number",
+      "description": "The maximum amount of likes a client can retrieve at once using the method `timeline.get_likes` via the `limit` parameter"
+    },
+    "retrieve_reposts_max_limit": {
+      "type": "number",
+      "description": "The maximum amount of reposts a client can retrieve at once using the method `timeline.get_reposted_peers` via the `limit` parameter"
+    },
+    "retrieve_replies_max_limit": {
+      "type": "number",
+      "description": "The maximum amount of replies a client can retrieve at once using the method `timeline.get_replies` via the `limit` parameter"
+    },
+    "retrieve_quotes_max_limit": {
+      "type": "number",
+      "description": "The maximum amount of quotes a client can retrieve at once using the method `timeline.get_quotes` via the `limit` parameter"
+    },
+    "retrieve_followers_max_limit": {
+      "type": "number",
+      "description": "The maximum amount of followers a client can retrieve at once using the method `network.get_followers` via the `limit` parameter"
+    },
+    "retrieve_following_max_limit": {
+      "type": "number",
+      "description": "The maximum amount of following peers a client can retrieve at once using the method `network.get_following` via the `limit` parameter"
+    }
+  },
+  "Peer": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the user associated to the network"
+    },
+    "type": { "type": "string", "description": "The type of the peer entity" },
+    "name": { "type": "string", "description": "The display name of the peer" },
+    "username": {
+      "type": "string",
+      "description": "The username associated with this peer"
+    },
+    "flags": {
+      "type": "string[]",
+      "description": "Flags associated with this peer"
+    }
+  },
+  "Session": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the session obtained when establishing a session"
+    },
+    "flags": {
+      "type": "string[]",
+      "description": "An array of flags that has been set to this session"
+    },
+    "authenticated": {
+      "type": "boolean",
+      "description": "Indicates if the session is currently authenticated to a user"
+    },
+    "created": {
+      "type": "number",
+      "description": "The Unix Timestamp for when this session was first created"
+    },
+    "expires": {
+      "type": "number",
+      "description": "The Unix Timestamp for when this session expires"
+    }
+  },
+  "Document": {
+    "id": { "type": "string", "description": "The ID of the document" },
+    "file_mime": { "type": "string", "description": "The Mime of the file" },
+    "file_name": {
+      "type": "string",
+      "description": "The original name of the file"
+    },
+    "file_size": {
+      "type": "number",
+      "description": "The size of the file in bytes"
+    },
+    "file_type": {
+      "type": "string",
+      "description": "The type of file detected by the server"
+    },
+    "flags": {
+      "type": "string[]",
+      "description": "An array of flags associated with this document"
+    },
+    "created_timestamp": {
+      "type": "number",
+      "description": "The Unix Timestamp for when this document was first created"
+    }
+  },
+  "HelpDocument": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the document, if the document gets updated then the ID will change."
+    },
+    "text": {
+      "type": "string",
+      "description": "The text contents of the document"
+    },
+    "entities": {
+      "type": "TextEntity[]",
+      "description": "An array of text entities being represented in the text"
+    }
+  },
+  "DisplayPictureSize": {
+    "width": { "type": "number", "description": "The width of the image" },
+    "height": { "type": "number", "description": "The height of the image" },
+    "document": {
+      "type": "Document",
+      "description": "The document object that points to the display picture"
+    }
+  },
+  "Profile": {
+    "first_name": {
+      "type": "string",
+      "description": "The first name of the entity"
+    },
+    "last_name": {
+      "type": "string | null",
+      "description": "The last name of the entity"
+    },
+    "name": {
+      "type": "string",
+      "description": "The full display name of the entity"
+    },
+    "biography": {
+      "type": "string | null",
+      "description": "A biography or description of the entity"
+    },
+    "location": {
+      "type": "string | null",
+      "description": "The location of the entity"
+    },
+    "url": {
+      "type": "string | null",
+      "description": "The URL of the entity (Can be a website or a blog, etc)"
+    },
+    "followers_count": {
+      "type": "number",
+      "description": "The amount of followers that this entity has"
+    },
+    "following_count": {
+      "type": "number",
+      "description": "The amount of peers that this entity is following"
+    },
+    "display_picture_sizes": {
+      "type": "DisplayPictureSize[]",
+      "description": "An array of display picture size objects that represents the entity's display picture"
+    }
+  },
+  "SessionIdentification": {
+    "session_id": {
+      "type": "string",
+      "description": "The ID of the session obtained when establishing a session"
+    },
+    "client_public_hash": {
+      "type": "string",
+      "description": "The Public Hash of the client used when establishing the session"
+    },
+    "challenge_answer": {
+      "type": "string",
+      "description": "The session challenge answer revolving around the client's private hash, the same client used to establish the session"
+    }
+  },
+  "SessionEstablished": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the session obtained when establishing a session"
+    },
+    "challenge": {
+      "type": "string",
+      "description": "The TOTP based challenge secret"
+    }
+  },
+  "TextEntity": {
+    "type": { "type": "string", "description": "The text entity type" },
+    "offset": {
+      "type": "number",
+      "description": "The offset for when the entity begins in the text"
+    },
+    "length": { "type": "number", "description": "The length of the entity" },
+    "value": {
+      "type": "string | null",
+      "description": "The value of the entity, for styling entities such as `BOLD | ITALIC`, etc. this value will be null, but for values such as `MENTION | HASHTAG` & `URL` the value will contain the respective value for the entity, for example a `URL` entity will contain a value of a http URL"
+    }
+  }
+}
