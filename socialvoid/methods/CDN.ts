@@ -1,4 +1,4 @@
-import { Document } from "../types/mod.ts";
+import { Document } from "../types.ts";
 import { formFromObj } from "../utils.ts";
 import MethodBase from "./MethodBase.ts";
 
@@ -11,7 +11,7 @@ export default class CDN extends MethodBase {
     });
 
     return Document.fromObject(
-      (await this.client.invokeCDNRequest(form)).results,
+      (await this.client.invokeCDNRequest(form)).results
     );
   }
 

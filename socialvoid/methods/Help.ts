@@ -1,5 +1,5 @@
 import Request from "../Request.ts";
-import { HelpDocument, ServerInformation } from "../types/mod.ts";
+import { HelpDocument, ServerInformation } from "../types.ts";
 import MethodBase from "./MethodBase.ts";
 
 export default class Help extends MethodBase {
@@ -11,8 +11,8 @@ export default class Help extends MethodBase {
   async getCommunityGuidelines() {
     return HelpDocument.fromObject(
       await this.client.invokeRequest(
-        new Request("help.get_community_guidelines"),
-      ),
+        new Request("help.get_community_guidelines")
+      )
     );
   }
 
@@ -21,7 +21,7 @@ export default class Help extends MethodBase {
    */
   async getPrivacyPolicy() {
     return HelpDocument.fromObject(
-      await this.client.invokeRequest(new Request("help.get_privacy_policy")),
+      await this.client.invokeRequest(new Request("help.get_privacy_policy"))
     );
   }
 
@@ -35,8 +35,8 @@ export default class Help extends MethodBase {
 
     return ServerInformation.fromObject(
       await this.client.invokeRequest(
-        new Request("help.get_server_information"),
-      ),
+        new Request("help.get_server_information")
+      )
     );
   }
 
@@ -45,7 +45,7 @@ export default class Help extends MethodBase {
    */
   async getTermsOfService() {
     return HelpDocument.fromObject(
-      await this.client.invokeRequest(new Request("help.get_terms_of_service")),
+      await this.client.invokeRequest(new Request("help.get_terms_of_service"))
     );
   }
 }

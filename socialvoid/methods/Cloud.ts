@@ -1,4 +1,4 @@
-import { Document } from "../types/mod.ts";
+import { Document } from "../types.ts";
 import MethodBase from "./MethodBase.ts";
 import Request from "../Request.ts";
 
@@ -14,8 +14,8 @@ export default class Cloud extends MethodBase {
         new Request("cloud.get_document", {
           document,
         }),
-        true,
-      ),
+        true
+      )
     );
   }
 }
