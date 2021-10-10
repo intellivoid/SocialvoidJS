@@ -7,9 +7,13 @@ export const isBrowser = typeof Deno === "undefined";
 
 export const os = isBrowser ? "Browser" : Deno.build.os;
 
-export const writeTextFileSync = Deno.writeTextFileSync;
+export const writeTextFileSync = isBrowser
+  ? (...args: any) => {}
+  : Deno.writeTextFileSync;
 
-export const readTextFileSync = Deno.readTextFileSync;
+export const readTextFileSync = isBrowser
+  ? (...args: any) => ""
+  : Deno.readTextFileSync;
 
 export const getRandomValues = (size: number) => {
   return crypto.getRandomValues(new Uint8Array(size)).buffer;
