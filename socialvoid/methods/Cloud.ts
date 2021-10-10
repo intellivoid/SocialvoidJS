@@ -14,8 +14,8 @@ export default class Cloud extends MethodBase {
         new Request("cloud.get_document", {
           document,
         }),
-        true
-      )
+        true,
+      ),
     );
   }
 }

@@ -8,7 +8,7 @@ export default class Network extends MethodBase {
    */
   async getMe() {
     return Peer.fromObject(
-      await this.client.invokeRequest(new Request("network.get_me"), true)
+      await this.client.invokeRequest(new Request("network.get_me"), true),
     );
   }
 }

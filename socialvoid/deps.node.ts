@@ -23,4 +23,4 @@ export const getRandomValues = (size: number) => {
   return randomBytes(size).buffer;
 };
 
-export { OTPAuth, jsSHA };
+export { jsSHA, OTPAuth };

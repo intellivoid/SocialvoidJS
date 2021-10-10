@@ -9,7 +9,7 @@ export default class Account extends MethodBase {
   deleteProfilePicture() {
     return this.client.invokeRequest(
       new Request("account.delete_profile_picture"),
-      true
+      true,
     );
   }
 
@@ -25,7 +25,7 @@ export default class Account extends MethodBase {
       new Request("account.set_profile_picture", {
         document,
       }),
-      true
+      true,
     );
   }
 }

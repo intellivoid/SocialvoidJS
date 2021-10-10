@@ -19,4 +19,4 @@ export const getRandomValues = (size: number) => {
   return crypto.getRandomValues(new Uint8Array(size)).buffer;
 };
 
-export { OTPAuth, jsSHA };
+export { jsSHA, OTPAuth };

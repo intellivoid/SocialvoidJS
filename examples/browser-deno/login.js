@@ -13,7 +13,7 @@ async function login(client, greet = true) {
     await client.session.authenticateUser(
       username,
       password,
-      otp == "" ? undefined : otp
+      otp == "" ? undefined : otp,
     );
   }
 

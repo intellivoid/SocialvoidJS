@@ -1,6 +1,6 @@
 import { IS_BROWSER } from "../constants.ts";
 import Store from "./Store.ts";
-import { writeTextFileSync, readTextFileSync } from "../deps.deno.ts";
+import { readTextFileSync, writeTextFileSync } from "../deps.deno.ts";
 
 export default class FileStore extends Store {
   data: { [key: string]: any };

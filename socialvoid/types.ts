@@ -15,7 +15,7 @@ export class ServerInformation extends TypeBase {
     public retrieveRepliesMaxLimit: number,
     public retrieveQuotesMaxLimit: number,
     public retrieveFollowersMaxLimit: number,
-    public retrieveFollowingMaxLimit: number
+    public retrieveFollowingMaxLimit: number,
   ) {
     super();
   }
@@ -33,7 +33,7 @@ export class ServerInformation extends TypeBase {
       obj.retrieve_replies_max_limit,
       obj.retrieve_quotes_max_limit,
       obj.retrieve_followers_max_limit,
-      obj.retrieve_following_max_limit
+      obj.retrieve_following_max_limit,
     );
   }
 }
@@ -44,7 +44,7 @@ export class Peer extends TypeBase {
     public type: string,
     public name: string,
     public username: string,
-    public flags: string[]
+    public flags: string[],
   ) {
     super();
   }
@@ -60,7 +60,7 @@ export class Session extends TypeBase {
     public flags: string[],
     public authenticated: boolean,
     public created: number,
-    public expires: number
+    public expires: number,
   ) {
     super();
   }
@@ -71,7 +71,7 @@ export class Session extends TypeBase {
       obj.flags,
       obj.authenticated,
       obj.created,
-      obj.expires
+      obj.expires,
     );
   }
 }
@@ -84,7 +84,7 @@ export class Document extends TypeBase {
     public fileSize: number,
     public fileType: string,
     public flags: string[],
-    public createdTimestamp: number
+    public createdTimestamp: number,
   ) {
     super();
   }
@@ -97,7 +97,7 @@ export class Document extends TypeBase {
       obj.file_size,
       obj.file_type,
       obj.flags,
-      obj.created_timestamp
+      obj.created_timestamp,
     );
   }
 }
@@ -106,7 +106,7 @@ export class HelpDocument extends TypeBase {
   constructor(
     public id: string,
     public text: string,
-    public entities: TextEntity[]
+    public entities: TextEntity[],
   ) {
     super();
   }
@@ -120,7 +120,7 @@ export class DisplayPictureSize extends TypeBase {
   constructor(
     public width: number,
     public height: number,
-    public document: Document
+    public document: Document,
   ) {
     super();
   }
@@ -140,7 +140,7 @@ export class Profile extends TypeBase {
     public url: string | null,
     public followersCount: number,
     public followingCount: number,
-    public displayPictureSizes: DisplayPictureSize[]
+    public displayPictureSizes: DisplayPictureSize[],
   ) {
     super();
   }
@@ -155,7 +155,7 @@ export class Profile extends TypeBase {
       obj.url,
       obj.followers_count,
       obj.following_count,
-      obj.display_picture_sizes
+      obj.display_picture_sizes,
     );
   }
 }
@@ -164,7 +164,7 @@ export class SessionIdentification extends TypeBase {
   constructor(
     public sessionId: string,
     public clientPublicHash: string,
-    public challengeAnswer: string
+    public challengeAnswer: string,
   ) {
     super();
   }
@@ -173,7 +173,7 @@ export class SessionIdentification extends TypeBase {
     return new this(
       obj.session_id,
       obj.client_public_hash,
-      obj.challenge_answer
+      obj.challenge_answer,
     );
   }
 }
@@ -193,7 +193,7 @@ export class TextEntity extends TypeBase {
     public type: string,
     public offset: number,
     public length: number,
-    public value: string | null
+    public value: string | null,
   ) {
     super();
   }

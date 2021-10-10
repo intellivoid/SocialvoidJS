@@ -1,7 +1,7 @@
 // import { crypto } from "https://deno.land/std@0.110.0/crypto/mod.ts";
 import Request from "./Request.ts";
 import Response from "./Response.ts";
-import { jsSHA, OTPAuth, getRandomValues } from "./deps.deno.ts";
+import { getRandomValues, jsSHA, OTPAuth } from "./deps.deno.ts";
 import map, { SocialvoidError } from "./errors.ts";
 
 export function throwError(code: number, message: string) {
@@ -45,8 +45,8 @@ export function parseResponses(body: any): Response | Response[] | undefined {
 
   return Array.isArray(body)
     ? body
-        .filter((item: any) => "id" in item)
-        .map((item: any) => new Response(item))
+      .filter((item: any) => "id" in item)
+      .map((item: any) => new Response(item))
     : "id" in body
     ? new Response(body)
     : undefined;

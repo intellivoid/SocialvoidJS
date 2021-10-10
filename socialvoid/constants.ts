@@ -1,4 +1,4 @@
-import { os, isBrowser } from "./deps.deno.ts";
+import { isBrowser, os } from "./deps.deno.ts";
 
 export const IS_BROWSER = isBrowser;
 export const NAME = "SocialvoidJS";
