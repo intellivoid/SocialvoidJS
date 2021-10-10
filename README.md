@@ -1,6 +1,6 @@
 # SocialvoidJS
 
-> [Node.js](https://nodejs.org), [Deno](https://deno.land) & 2 variant browser Socialvoid client.
+> [Deno](https://deno.land), [Node.js](https://nodejs.org) & 2 variant browser Socialvoid client.
 
 ## Introduction
 
