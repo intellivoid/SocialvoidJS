@@ -1,8 +1,34 @@
-# Socialvoid JS
+# SocialvoidJS
 
 > [Node.js](https://nodejs.org), [Deno](https://deno.land) & browser Socialvoid client.
 
-# Features
+## Introduction
+
+SocialvoidJS is a Deno Socialvoid client which can be backported to Node.js using the tool `deno2node`. Also, it can be bundled for browsers using the bundle command of Deno and Webpack.
+
+## Bundling for browser
+
+### Method 1: Deno's bundle command (recommended)
+
+```bash
+deno bundle socialvoid/mod.ts socialvoid.js
+```
+
+### Method 2: Webpack
+
+1. Convert to Node.js:
+
+```bash
+npm run build
+```
+
+2. Build:
+
+```bash
+NODE_ENV=production npx webpack
+```
+
+## Features
 
 - Everything works on Node.js, Deno and browsers.
 - Multiple ways to store session and other data: MemoryStore, FileStore,
