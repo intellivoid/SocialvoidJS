@@ -1,7 +1,7 @@
 // import { crypto } from "https://deno.land/std@0.110.0/crypto/mod.ts";
 import Request from "./Request.ts";
 import Response from "./Response.ts";
-import { OTPAuth } from "./deps.deno.ts";
+import { jsSHA, OTPAuth, getRandomValues } from "./deps.deno.ts";
 import map, { SocialvoidError } from "./errors.ts";
 
 export function throwError(code: number, message: string) {
@@ -18,12 +18,6 @@ export function bufferToHex(buffer: ArrayBuffer) {
     .join("");
 }
 
-export async function sha1HexDigest(data: string) {
-  return bufferToHex(
-    await crypto.subtle.digest("SHA-1", new TextEncoder().encode(data))
-  );
-}
-
 export function answerChallenge(clientPrivateHash: string, challenge: string) {
   const totpCode = new OTPAuth.TOTP({
     algorithm: "sha1",
@@ -32,7 +26,9 @@ export function answerChallenge(clientPrivateHash: string, challenge: string) {
     secret: challenge,
   }).generate();
 
-  return sha1HexDigest(totpCode + clientPrivateHash);
+  const hash = new jsSHA("SHA-1", "TEXT");
+  hash.update(totpCode + clientPrivateHash);
+  return hash.getHash("HEX");
 }
 
 export const unixTimestampToDate = (unixTimestamp: number) =>
@@ -67,7 +63,7 @@ export function serializeRequests(...requests: Request[]): string {
 }
 
 export const newHash = () => {
-  return bufferToHex(crypto.getRandomValues(new Uint8Array(32)).buffer);
+  return bufferToHex(getRandomValues(32));
 };
 
 export const formFromObj = (obj: { [key: string]: any }) => {

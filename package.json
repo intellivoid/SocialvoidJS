@@ -2,12 +2,12 @@
   "name": "socialvoid-deno",
   "version": "1.0.0",
   "description": "Node.js, Deno & browser Socialvoid client.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "deno2node tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,12 @@
   },
   "homepage": "https://github.com/intellivoid/Socialvoid-Deno#readme",
   "dependencies": {
+    "form-data": "^4.0.0",
+    "node-fetch": "^3.0.0",
     "otpauth": "^7.0.6"
   },
   "devDependencies": {
+    "deno2node": "^1.0.0",
     "typescript": "^4.4.3"
   }
 }
