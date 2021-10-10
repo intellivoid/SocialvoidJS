@@ -1,8 +1,8 @@
 import { Client } from "../../socialvoid/mod.ts";
 
-const client = new Client();
+export const client = new Client();
 
-(async () => {
+export async function login() {
   if (!client.sessionExists) {
     await client.newSession();
   }
@@ -13,12 +13,7 @@ const client = new Client();
     await client.session.authenticateUser(
       prompt("Username:")!,
       prompt("Password:")!,
-      prompt("OTP (if set):")!,
+      prompt("OTP (if set):")!
     );
   }
-
-  const me = await client.network.getMe();
-  console.log("Logged in as", me.name + ".");
-  console.log(`${me.name}’s username is`, me.username + ".");
-  console.log(`@${me.username}’s ID is`, me.id + ".");
-})();
+}
