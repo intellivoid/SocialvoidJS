@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="./login.js"></script>
+    <script>
+      (async () => {
+        const socialvoid = await import("../../socialvoid.js");
+        const client = new socialvoid.Client();
+        globalThis.client = client;
+        await login(client);
+      })();
+    </script>
+  </body>
+</html>
