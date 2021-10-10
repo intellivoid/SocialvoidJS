@@ -105,10 +105,6 @@
     "flags": {
       "type": "string[]",
       "description": "An array of flags associated with this document"
-    },
-    "created_timestamp": {
-      "type": "number",
-      "description": "The Unix Timestamp for when this document was first created"
     }
   },
   "HelpDocument": {

@@ -84,7 +84,6 @@ export class Document extends TypeBase {
     public fileSize: number,
     public fileType: string,
     public flags: string[],
-    public createdTimestamp: number,
   ) {
     super();
   }
@@ -97,7 +96,6 @@ export class Document extends TypeBase {
       obj.file_size,
       obj.file_type,
       obj.flags,
-      obj.created_timestamp,
     );
   }
 }
@@ -179,7 +177,10 @@ export class SessionIdentification extends TypeBase {
 }
 
 export class SessionEstablished extends TypeBase {
-  constructor(public id: string, public challenge: string) {
+  constructor(
+    public id: string,
+    public challenge: string,
+  ) {
     super();
   }
 
