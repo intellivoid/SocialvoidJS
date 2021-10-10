@@ -1,8 +1,7 @@
 // import { crypto } from "https://deno.land/std@0.110.0/crypto/mod.ts";
 import Request from "./Request.ts";
 import Response from "./Response.ts";
-// @deno-types="https://deno.land/x/otpauth@v7.0.6/dist/otpauth.d.ts"
-import * as OTPAuth from "https://deno.land/x/otpauth@v7.0.6/dist/otpauth.esm.js";
+import { OTPAuth } from "./deps.deno.ts";
 import map, { SocialvoidError } from "./errors.ts";
 
 export function throwError(code: number, message: string) {
@@ -21,7 +20,7 @@ export function bufferToHex(buffer: ArrayBuffer) {
 
 export async function sha1HexDigest(data: string) {
   return bufferToHex(
-    await crypto.subtle.digest("SHA-1", new TextEncoder().encode(data)),
+    await crypto.subtle.digest("SHA-1", new TextEncoder().encode(data))
   );
 }
 
@@ -50,8 +49,8 @@ export function parseResponses(body: any): Response | Response[] | undefined {
 
   return Array.isArray(body)
     ? body
-      .filter((item: any) => "id" in item)
-      .map((item: any) => new Response(item))
+        .filter((item: any) => "id" in item)
+        .map((item: any) => new Response(item))
     : "id" in body
     ? new Response(body)
     : undefined;

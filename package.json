@@ -1,0 +1,28 @@
+{
+  "name": "socialvoid-deno",
+  "version": "1.0.0",
+  "description": "> Deno & browser Socialvoid client.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intellivoid/Socialvoid-Deno.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/intellivoid/Socialvoid-Deno/issues"
+  },
+  "homepage": "https://github.com/intellivoid/Socialvoid-Deno#readme",
+  "dependencies": {
+    "otpauth": "^7.0.6"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}

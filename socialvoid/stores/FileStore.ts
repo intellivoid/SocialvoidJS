@@ -1,5 +1,6 @@
 import { IS_BROWSER } from "../constants.ts";
 import Store from "./Store.ts";
+import { writeTextFileSync, readTextFileSync } from "../deps.deno.ts";
 
 export default class FileStore extends Store {
   data: { [key: string]: any };
@@ -14,7 +15,7 @@ export default class FileStore extends Store {
     this.file = this.file + ".json";
 
     try {
-      this.data = JSON.parse(Deno.readTextFileSync(this.file));
+      this.data = JSON.parse(readTextFileSync(this.file));
     } catch (_) {
       this.data = {};
     }
@@ -29,7 +30,7 @@ export default class FileStore extends Store {
   }
 
   save() {
-    Deno.writeTextFileSync(this.file, JSON.stringify(this.data));
+    writeTextFileSync(this.file, JSON.stringify(this.data));
   }
 
   delete(key: string) {
