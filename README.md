@@ -8,7 +8,7 @@ SocialvoidJS is a Deno Socialvoid client which can be backported to Node.js usin
 
 ### Features
 
-- Everything works on Node.js, Deno and browsers.
+- Everything works on Node.js, Deno and browsers ([2 ways](#bundling-for-browsers)).
 - Multiple ways to store session and other data: MemoryStore, FileStore,
   LocalStorageStore and the ones you define!
 - Socialvoid types in classes and applicable for instanceof.
@@ -17,7 +17,7 @@ SocialvoidJS is a Deno Socialvoid client which can be backported to Node.js usin
 - Account, Cloud, Help and Network methods returning actual types.
 - Capability of sending raw requests.
 
-## Bundling for browser
+## Bundling for browsers
 
 ### Method 1: Deno's bundle command (recommended)
 
