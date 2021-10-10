@@ -1,13 +1,16 @@
 {
-  "name": "socialvoid-deno",
+  "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "Node.js, Deno & browser Socialvoid client.",
+  "description": "My webpack project",
   "main": "dist/index.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "build": "deno2node tsconfig.json"
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -26,7 +29,12 @@
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.12",
+    "@webpack-cli/generators": "^2.4.0",
+    "crypto-browserify": "^3.12.0",
     "deno2node": "^1.0.0",
-    "typescript": "^4.4.3"
+    "stream-browserify": "^3.0.0",
+    "typescript": "^4.4.3",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
   }
 }
