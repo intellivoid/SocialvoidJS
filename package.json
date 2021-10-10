@@ -1,7 +1,7 @@
 {
   "name": "socialvoid",
   "version": "1.0.0",
-  "description": "Deno, Node.js & 2 variant browser Socialvoid client.",
+  "description": "Deno, Node.js and browser Socialvoid client.",
   "main": "dist/mod.js",
   "scripts": {
     "bundle:deno": "deno bundle socialvoid/mod.ts socialvoid.js",
