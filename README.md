@@ -1,10 +1,10 @@
-# Socialvoid Deno
+# Socialvoid JS
 
-> Deno & browser Socialvoid client.
+> [Node.js](https://nodejs.org), [Deno](https://deno.land) & browser Socialvoid client.
 
 # Features
 
-- Everything works on both Deno and browser.
+- Everything works on Node.js, Deno and browsers.
 - Multiple ways to store session and other data: MemoryStore, FileStore,
   LocalStorageStore and the ones you define!
 - Socialvoid types in classes and applicable for instanceof.

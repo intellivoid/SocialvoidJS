@@ -1,7 +1,7 @@
 {
   "name": "socialvoid-deno",
   "version": "1.0.0",
-  "description": "> Deno & browser Socialvoid client.",
+  "description": "Node.js, Deno & browser Socialvoid client.",
   "main": "index.js",
   "directories": {
     "example": "examples"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/intellivoid/Socialvoid-Deno.git"
   },
-  "author": "",
+  "author": "Roj Serbest <roj@rojser.best>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/intellivoid/Socialvoid-Deno/issues"
