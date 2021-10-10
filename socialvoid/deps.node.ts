@@ -4,9 +4,12 @@ import { readFileSync } from "fs";
 import { randomBytes } from "crypto";
 import jsSHA from "jssha";
 import fetch from "node-fetch";
+import FormData from "form-data";
 
 // @ts-ignore
 globalThis.fetch = fetch;
+// @ts-ignore
+globalThis.FormData = FormData;
 
 export const os = process.platform;
 
