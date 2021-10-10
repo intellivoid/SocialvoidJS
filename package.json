@@ -1,16 +1,14 @@
 {
   "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "Deno, Node.js & 2 variant browser Socialvoid client.",
   "main": "dist/index.js",
-  "directories": {
-    "example": "examples"
-  },
   "scripts": {
-    "build": "webpack --mode=production --node-env=production",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
-    "watch": "webpack --watch"
+    "bundle:deno": "deno bundle socialvoid/mod.ts socialvoid.ts",
+    "bundle:webpack": "webpack",
+    "bundle": "npm run bundle:deno && npm run bundle:webpack",
+    "deno2node": "deno2node tsconfig.json",
+    "build": "npm run deno2node && npm run bundle"
   },
   "repository": {
     "type": "git",
