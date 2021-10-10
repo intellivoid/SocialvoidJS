@@ -1,13 +1,13 @@
 # SocialvoidJS
 
-> [Deno](https://deno.land), [Node.js](https://nodejs.org) & 2 variant browser
+> [Deno](https://deno.land), [Node.js](https://nodejs.org) and browser
 > Socialvoid client.
 
 ## Introduction
 
-SocialvoidJS is a Deno Socialvoid client which can be backported to Node.js
-using the tool `deno2node`. Also, it can be bundled for browsers using the
-bundle command of Deno and Webpack.
+SocialvoidJS is a Deno Socialvoid client which is backported to Node.js using
+the tool `deno2node`. Also, it can be bundled for browsers using the bundle
+command of Deno and Webpack.
 
 ### Features
 
