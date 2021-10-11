@@ -2,6 +2,8 @@ export class TypeBase {
   static fromObject: (obj: any) => TypeBase;
 }
 
+export type FileType = "DOCUMENT" | "PHOTO" | "VIDEO" | "AUDIO";
+
 export class ServerInformation extends TypeBase {
   constructor(
     public networkName: string,
@@ -82,7 +84,7 @@ export class Document extends TypeBase {
     public fileMime: string,
     public fileName: string,
     public fileSize: number,
-    public fileType: string,
+    public fileType: FileType,
     public flags: string[],
   ) {
     super();
@@ -177,10 +179,7 @@ export class SessionIdentification extends TypeBase {
 }
 
 export class SessionEstablished extends TypeBase {
-  constructor(
-    public id: string,
-    public challenge: string,
-  ) {
+  constructor(public id: string, public challenge: string) {
     super();
   }
 
