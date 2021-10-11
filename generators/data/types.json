@@ -60,7 +60,10 @@
       "type": "string",
       "description": "The ID of the user associated to the network"
     },
-    "type": { "type": "string", "description": "The type of the peer entity" },
+    "type": {
+      "type": "PeerType",
+      "description": "The type of the peer entity"
+    },
     "name": { "type": "string", "description": "The display name of the peer" },
     "username": {
       "type": "string",
@@ -198,7 +201,7 @@
     }
   },
   "TextEntity": {
-    "type": { "type": "string", "description": "The text entity type" },
+    "type": { "type": "TextEntityType", "description": "The text entity type" },
     "offset": {
       "type": "number",
       "description": "The offset for when the entity begins in the text"
