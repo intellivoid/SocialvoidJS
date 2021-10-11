@@ -60,7 +60,8 @@
     },
     "posted_timestamp": {
       "type": "number",
-      "description": "The Unix Timestamp for when this post was created"
+      "description": "The Unix Timestamp for when this post was created",
+      "is_date": true
     },
     "flags": {
       "type": "string[]",
@@ -151,11 +152,13 @@
     },
     "created": {
       "type": "number",
-      "description": "The Unix Timestamp for when this session was first created"
+      "description": "The Unix Timestamp for when this session was first created",
+      "is_date": true
     },
     "expires": {
       "type": "number",
-      "description": "The Unix Timestamp for when this session expires"
+      "description": "The Unix Timestamp for when this session expires",
+      "is_date": true
     }
   },
   "Document": {
