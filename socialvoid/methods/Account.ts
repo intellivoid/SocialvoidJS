@@ -6,7 +6,7 @@ export default class Account extends MethodBase {
   /**
    * Removes the profile picture of the currently logged in account.
    */
-  deleteProfilePicture() {
+  deleteProfilePicture(): Promise<boolean> {
     return this.client.invokeRequest(
       new Request("account.delete_profile_picture"),
       true,
@@ -32,7 +32,7 @@ export default class Account extends MethodBase {
   /**
    * Removes the profile biography of the currently logged in account.
    */
-  clearProfileBiography() {
+  clearProfileBiography(): Promise<boolean> {
     return this.client.invokeRequest(
       new Request("account.clear_profile_biography"),
       true,
@@ -42,7 +42,7 @@ export default class Account extends MethodBase {
   /**
    * Removes the profile location of the currently logged in account.
    */
-  clearProfileLocation() {
+  clearProfileLocation(): Promise<boolean> {
     return this.client.invokeRequest(
       new Request("account.clear_profile_location"),
       true,
