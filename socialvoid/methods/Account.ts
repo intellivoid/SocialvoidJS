@@ -28,4 +28,24 @@ export default class Account extends MethodBase {
       true,
     );
   }
+
+  /**
+   * Removes the profile biography of the currently logged in account.
+   */
+  clearProfileBiography() {
+    return this.client.invokeRequest(
+      new Request("account.clear_profile_biography"),
+      true,
+    );
+  }
+
+  /**
+   * Removes the profile location of the currently logged in account.
+   */
+  clearProfileLocation() {
+    return this.client.invokeRequest(
+      new Request("account.clear_profile_location"),
+      true,
+    );
+  }
 }
