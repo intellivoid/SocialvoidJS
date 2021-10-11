@@ -6,8 +6,8 @@
 ## Introduction
 
 SocialvoidJS is a Deno Socialvoid client which is backported to Node.js using
-the tool [`deno2node`](https://github.com/fromdeno/deno2node). Also, it can be bundled for browsers using the bundle
-command of Deno or with Webpack.
+the tool [`deno2node`](https://github.com/fromdeno/deno2node). Also, it can be
+bundled for browsers using the bundle command of Deno or with Webpack.
 
 ### Features
 
@@ -16,7 +16,7 @@ command of Deno or with Webpack.
 - Multiple ways to store session and other data: MemoryStore, FileStore,
   LocalStorageStore and the ones you define!
 - Typings for Socialvoid types.
-- Most thrown errors can be used with`instanceof`.
+- Most thrown errors can be used with `instanceof`.
 - CDN upload and download support.
 - Account, Cloud, Help and Network methods.
 - Capability of sending raw requests.
