@@ -73,7 +73,6 @@ export default class BaseClient {
   }
 
   async invokeCDNRequest(data: FormData) {
-    console.log(data);
     return await (await this.sendCDN(data)).json();
   }
 
