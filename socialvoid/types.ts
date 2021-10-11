@@ -39,7 +39,7 @@ export class Post extends TypeBase {
     public likesCount: number | null,
     public repostsCount: number | null,
     public quotesCount: number | null,
-    public postedTimestamp: number,
+    public postedTimestamp: Date,
     public flags: string[],
   ) {
     super();
@@ -60,7 +60,7 @@ export class Post extends TypeBase {
       obj.likes_count,
       obj.reposts_count,
       obj.quotes_count,
-      obj.posted_timestamp,
+      new Date(obj.posted_timestamp * 1000),
       obj.flags,
     );
   }
@@ -123,8 +123,8 @@ export class Session extends TypeBase {
     public id: string,
     public flags: string[],
     public authenticated: boolean,
-    public created: number,
-    public expires: number,
+    public created: Date,
+    public expires: Date,
   ) {
     super();
   }
@@ -134,8 +134,8 @@ export class Session extends TypeBase {
       obj.id,
       obj.flags,
       obj.authenticated,
-      obj.created,
-      obj.expires,
+      new Date(obj.created * 1000),
+      new Date(obj.expires * 1000),
     );
   }
 }
