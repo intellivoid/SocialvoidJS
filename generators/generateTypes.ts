@@ -50,7 +50,7 @@ for (const obj in objs) {
   code += "return new this(";
   for (const param in objs[obj]) {
     if (objs[obj][param].is_date) {
-      code += `new Date(obj.${param} * 1000)`;
+      code += `new Date(obj.${param} * 1000),`;
     } else {
       code += `obj.${param},`;
     }
