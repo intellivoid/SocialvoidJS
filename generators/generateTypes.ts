@@ -1,16 +1,19 @@
+import { toCamel } from "./helpers.ts";
 import { format } from "./format.ts";
 
-interface Param {
+interface TypeParams {
   type: string;
   description: string;
   is_date?: boolean;
 }
 
-type Obj = { [key: string]: Param };
+type Type = { [key: string]: TypeParams };
 
-type Objs = { [key: string]: Obj };
+type Types = { [key: string]: Type };
 
-const objs: Objs = JSON.parse(Deno.readTextFileSync("./data/types.json"));
+const types: Types = JSON.parse(
+  Deno.readTextFileSync("./data/types.json"),
+);
 
 let code = `
 export class TypeBase {
@@ -18,29 +21,27 @@ export class TypeBase {
 }
 
 `;
-const toCamel = (s: string) => {
-  return s.replace(/([-_][a-z])/gi, ($1) => {
-    return $1.toUpperCase().replace("-", "").replace("_", "");
-  });
-};
 
-for (const obj in objs) {
-  if (obj == "_") {
-    for (const t in objs[obj]) {
-      code += `export type ${t} = ${objs[obj][t]}\n\n`;
+for (const i in types) {
+  const name = i;
+  const params = types[name];
+
+  if (name == "_") {
+    for (const param in params) {
+      code += `export type ${param} = ${params[param]}\n\n`;
     }
 
     continue;
   }
 
   code += `
-  export class ${obj} extends TypeBase{
+  export class ${name} extends TypeBase{
       constructor(
   `;
 
-  for (const param in objs[obj]) {
+  for (const param in params) {
     code += `public ${toCamel(param)}: ${
-      objs[obj][param].is_date ? "Date" : objs[obj][param].type
+      params[param].is_date ? "Date" : params[param].type
     },`;
   }
 
@@ -48,14 +49,15 @@ for (const obj in objs) {
 
   code += "static fromObject(obj: any) {";
   code += "return new this(";
-  for (const param in objs[obj]) {
-    if (objs[obj][param].is_date) {
+
+  for (const param in params) {
+    if (params[param].is_date) {
       code += `new Date(obj.${param} * 1000),`;
-    } else if (objs[obj][param].type in objs) {
-      code += `${objs[obj][param].type}.fromObject(obj.${param}),`;
-    } else if (objs[obj][param].type.replace("[]", "") in objs) {
+    } else if (params[param].type in types) {
+      code += `${params[param].type}.fromObject(obj.${param}),`;
+    } else if (params[param].type.replace("[]", "") in types) {
       code += `obj.${param}.map((obj: any) => ${
-        objs[obj][param].type.replace("[]", "")
+        params[param].type.replace("[]", "")
       }.fromObject(obj))`;
     } else {
       code += `obj.${param},`;
@@ -65,5 +67,5 @@ for (const obj in objs) {
   code += ")}}\n\n";
 }
 
-Deno.writeTextFileSync("../socialvoid/types.ts", code);
+await Deno.writeTextFile("../socialvoid/types.ts", code);
 await format();

@@ -1,19 +1,21 @@
 import { format } from "./format.ts";
 
-interface Errorr {
+interface Error {
   _: string;
   description: string;
 }
 
-type ErrorGroup = { [key: string]: Errorr };
+type ErrorGroup = { [key: string]: Error };
 
-type Errors = { [key: string]: ErrorGroup };
+type ErrorGroups = { [key: string]: ErrorGroup };
 
-const errors: Errors = JSON.parse(Deno.readTextFileSync("./data/errors.json"));
+const errorGroups: ErrorGroups = JSON.parse(
+  Deno.readTextFileSync("./data/errors.json"),
+);
 
 let map: { [key: string]: string } = {};
 
-let code = `
+let toWrite = `
 export class SocialvoidError extends Error {
     message: string;
       
@@ -24,29 +26,31 @@ export class SocialvoidError extends Error {
 }
 `;
 
-for (const group in errors) {
-  const groupName = group.charAt(0).toUpperCase() + group.slice(1) + "Error";
-  code += `
-export class ${groupName} extends SocialvoidError {}
+for (const i in errorGroups) {
+  const name = i.charAt(0).toUpperCase() + i.slice(1) + "Error";
+  const errorGroup = errorGroups[i];
+
+  toWrite += `
+export class ${name} extends SocialvoidError {}
 
 `;
 
-  for (const errorCode in errors[group]) {
-    const errorType = errors[group][errorCode]._;
-    map[errorCode] = errorType;
-
-    code += `export class ${errorType} extends ${groupName} {}\n\n`;
+  for (const i in errorGroup) {
+    const code = i;
+    const type = errorGroup[code]._;
+    map[code] = type;
+    toWrite += `export class ${type} extends ${name} {}\n\n`;
   }
 }
 
-code += "const map: {[key: string]: typeof SocialvoidError} = ";
-code += JSON.stringify(map)
+toWrite += "const map: {[key: string]: typeof SocialvoidError} = ";
+toWrite += JSON.stringify(map)
   .replaceAll('":"', '":')
   .replaceAll('",', ",")
   .replace('"}', "}");
 
-code += ";\n\n";
-code += "export default map;";
+toWrite += ";\n\n";
+toWrite += "export default map;";
 
-Deno.writeTextFileSync("../socialvoid/errors.ts", code);
+await Deno.writeTextFile("../socialvoid/errors.ts", toWrite);
 await format();
