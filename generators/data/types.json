@@ -1,4 +1,7 @@
 {
+  "_": {
+    "FileType": "\"DOCUMENT\" | \"PHOTO\" | \"VIDEO\" | \"AUDIO\""
+  },
   "ServerInformation": {
     "network_name": {
       "type": "string",
@@ -99,7 +102,7 @@
       "description": "The size of the file in bytes"
     },
     "file_type": {
-      "type": "string",
+      "type": "FileType",
       "description": "The type of file detected by the server"
     },
     "flags": {

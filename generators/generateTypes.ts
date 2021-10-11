@@ -23,6 +23,14 @@ const toCamel = (s: string) => {
 };
 
 for (const obj in objs) {
+  if (obj == "_") {
+    for (const t in objs[obj]) {
+      code += `export type ${t} = ${objs[obj][t]}\n\n`;
+    }
+
+    continue;
+  }
+
   code += `
   export class ${obj} extends TypeBase{
       constructor(
