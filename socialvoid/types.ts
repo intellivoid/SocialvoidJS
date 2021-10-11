@@ -4,6 +4,68 @@ export class TypeBase {
 
 export type FileType = "DOCUMENT" | "PHOTO" | "VIDEO" | "AUDIO";
 
+export type PeerType = "USER" | "BOT" | "PROXY";
+
+export type TextEntityType =
+  | "BOLD"
+  | "ITALIC"
+  | "CODE"
+  | "STRIKE"
+  | "UNDERLINE"
+  | "URL"
+  | "MENTION"
+  | "HASHTAG";
+
+export type PostType =
+  | "UNKNOWN"
+  | "DELETED"
+  | "POST"
+  | "REPLY"
+  | "QUOTE"
+  | "REPOST";
+
+export class Post extends TypeBase {
+  constructor(
+    public id: string,
+    public type: PostType,
+    public peer: Peer | null,
+    public source: string | null,
+    public text: string | null,
+    public entities: TextEntity[] | null,
+    public mentionedPeers: Peer[] | null,
+    public replyToPost: Post | null,
+    public quotedPost: Post | null,
+    public repostedPost: Post | null,
+    public likesCount: number | null,
+    public repostsCount: number | null,
+    public quotesCount: number | null,
+    public postedTimestamp: number,
+    public flags: string[],
+  ) {
+    super();
+  }
+
+  static fromObject(obj: any) {
+    return new this(
+      obj.id,
+      obj.type,
+      obj.peer,
+      obj.source,
+      obj.text,
+      obj.entities,
+      obj.mentioned_peers,
+      obj.reply_to_post,
+      obj.quoted_post,
+      obj.reposted_post,
+      obj.likes_count,
+      obj.reposts_count,
+      obj.quotes_count,
+      obj.posted_timestamp,
+      obj.flags,
+    );
+  }
+}
+
 export class ServerInformation extends TypeBase {
   constructor(
     public networkName: string,
@@ -43,7 +105,7 @@ export class ServerInformation extends TypeBase {
 export class Peer extends TypeBase {
   constructor(
     public id: string,
-    public type: string,
+    public type: PeerType,
     public name: string,
     public username: string,
     public flags: string[],
@@ -179,7 +241,10 @@ export class SessionIdentification extends TypeBase {
 }
 
 export class SessionEstablished extends TypeBase {
-  constructor(public id: string, public challenge: string) {
+  constructor(
+    public id: string,
+    public challenge: string,
+  ) {
     super();
   }
 
@@ -190,7 +255,7 @@ export class SessionEstablished extends TypeBase {
 
 export class TextEntity extends TypeBase {
   constructor(
-    public type: string,
+    public type: TextEntityType,
     public offset: number,
     public length: number,
     public value: string | null,
