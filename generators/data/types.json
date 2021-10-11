@@ -2,7 +2,8 @@
   "_": {
     "FileType": "\"DOCUMENT\" | \"PHOTO\" | \"VIDEO\" | \"AUDIO\"",
     "PeerType": "\"USER\" | \"BOT\" | \"PROXY\"",
-    "TextEntityType": "\"BOLD\" | \"ITALIC\" | \"CODE\" | \"STRIKE\" | \"UNDERLINE\" | \"URL\" | \"MENTION\" | \"HASHTAG\""
+    "TextEntityType": "\"BOLD\" | \"ITALIC\" | \"CODE\" | \"STRIKE\" | \"UNDERLINE\" | \"URL\" | \"MENTION\" | \"HASHTAG\"",
+    "PostType": "\"UNKNOWN\" | \"DELETED\" | \"POST\" | \"REPLY\" | \"QUOTE\" | \"REPOST\""
   },
   "ServerInformation": {
     "network_name": {
