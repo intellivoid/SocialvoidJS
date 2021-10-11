@@ -174,7 +174,11 @@ export class HelpDocument extends TypeBase {
   }
 
   static fromObject(obj: any) {
-    return new this(obj.id, obj.text, obj.entities);
+    return new this(
+      obj.id,
+      obj.text,
+      obj.entities.map((obj: any) => TextEntity.fromObject(obj)),
+    );
   }
 }
 
@@ -188,7 +192,7 @@ export class DisplayPictureSize extends TypeBase {
   }
 
   static fromObject(obj: any) {
-    return new this(obj.width, obj.height, obj.document);
+    return new this(obj.width, obj.height, Document.fromObject(obj.document));
   }
 }
 
@@ -217,7 +221,9 @@ export class Profile extends TypeBase {
       obj.url,
       obj.followers_count,
       obj.following_count,
-      obj.display_picture_sizes,
+      obj.display_picture_sizes.map((obj: any) =>
+        DisplayPictureSize.fromObject(obj)
+      ),
     );
   }
 }

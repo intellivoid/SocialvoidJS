@@ -51,6 +51,12 @@ for (const obj in objs) {
   for (const param in objs[obj]) {
     if (objs[obj][param].is_date) {
       code += `new Date(obj.${param} * 1000),`;
+    } else if (objs[obj][param].type in objs) {
+      code += `${objs[obj][param].type}.fromObject(obj.${param}),`;
+    } else if (objs[obj][param].type.replace("[]", "") in objs) {
+      code += `obj.${param}.map((obj: any) => ${
+        objs[obj][param].type.replace("[]", "")
+      }.fromObject(obj))`;
     } else {
       code += `obj.${param},`;
     }
