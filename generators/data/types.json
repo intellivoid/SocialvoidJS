@@ -5,6 +5,68 @@
     "TextEntityType": "\"BOLD\" | \"ITALIC\" | \"CODE\" | \"STRIKE\" | \"UNDERLINE\" | \"URL\" | \"MENTION\" | \"HASHTAG\"",
     "PostType": "\"UNKNOWN\" | \"DELETED\" | \"POST\" | \"REPLY\" | \"QUOTE\" | \"REPOST\""
   },
+  "Post": {
+    "id": {
+      "type": "string",
+      "description": "The unique ID for the post"
+    },
+    "type": {
+      "type": "PostType",
+      "description": "The post type used to represent the true intention of the post"
+    },
+    "peer": {
+      "type": "Peer | null",
+      "description": "The author peer of the post, this property can be null if the post was deleted."
+    },
+    "source": {
+      "type": "string|null",
+      "description": "The source for where this post was composed from or collected from (eg; the client the user is using or the third-party source that the post was collected. This is determined by the server). This property can be null if the post was deleted."
+    },
+    "text": {
+      "type": "string|null",
+      "description": "The text content of the post source. This property can be null if the post has been deleted"
+    },
+    "entities": {
+      "type": "TextEntity[] | null",
+      "description": "An array of entities extracted from the text, can be used by the client to highlight clickable entities that preforms an action. This property can be null if the post was deleted."
+    },
+    "mentioned_peers": {
+      "type": "Peer[] | null",
+      "description": "An array of resolved peers that was mentioned in the post text. This property can be null if the post was deleted"
+    },
+    "reply_to_post": {
+      "type": "Post | null",
+      "description": "The original post that this post is replying to if applicable, otherwise null."
+    },
+    "quoted_post": {
+      "type": "Post | null",
+      "description": "The original post that this post is quoting if applicable, otherwise null"
+    },
+    "reposted_post": {
+      "type": "Post | null",
+      "description": "The original post that this post is reposting if applicable, otherwise null"
+    },
+    "likes_count": {
+      "type": "number | null",
+      "description": "The amount of likes that this post has if applicable, otherwise null"
+    },
+    "reposts_count": {
+      "type": "number | null",
+      "description": "The amount of repost that this post has if applicable, otherwise null"
+    },
+    "quotes_count": {
+      "type": "number | null",
+      "description": "The amount of replies that this post has if applicable, otherwise null"
+    },
+    "posted_timestamp": {
+      "type": "number",
+      "description": "The Unix Timestamp for when this post was created"
+    },
+    "flags": {
+      "type": "string[]",
+      "description": "The flags associated with this post (WIP)"
+    }
+  },
   "ServerInformation": {
     "network_name": {
       "type": "string",
