@@ -29,4 +29,4 @@ async function login() {
   }
 }
 
-module.exports = { client, login };
+module.exports = { client, login, prompt };
