@@ -4,6 +4,7 @@
   "description": "Deno, Node.js and browser Socialvoid client.",
   "main": "dist/mod.js",
   "scripts": {
+    "generate": "deno run generators/mod.ts",
     "bundle:deno": "deno bundle socialvoid/mod.ts socialvoid.js",
     "bundle:webpack": "webpack",
     "bundle": "npm run bundle:deno && npm run bundle:webpack",
