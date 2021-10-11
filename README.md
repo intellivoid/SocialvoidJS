@@ -15,10 +15,10 @@ command of Deno and Webpack.
   ([2 ways](#bundling-for-browsers)).
 - Multiple ways to store session and other data: MemoryStore, FileStore,
   LocalStorageStore and the ones you define!
-- Socialvoid types in classes and applicable for instanceof.
-- Most thrown errors can be used with instanceof.
+- Typings for Socialvoid types.
+- Most thrown errors can be used with`instanceof`.
 - CDN upload and download support.
-- Account, Cloud, Help and Network methods returning actual types.
+- Account, Cloud, Help and Network methods.
 - Capability of sending raw requests.
 
 ## Bundling for browsers

@@ -6,16 +6,14 @@ export default class Cloud extends MethodBase {
   /**
    * Gets a document using its ID or instance.
    */
-  async getDocument(document: string | Document) {
-    document = document instanceof Document ? document.id : document;
+  getDocument(document: string | Document): Promise<Document> {
+    document = typeof document == "string" ? document : document.id;
 
-    return Document.fromObject(
-      await this.client.invokeRequest(
-        new Request("cloud.get_document", {
-          document,
-        }),
-        true,
-      ),
+    return this.client.invokeRequest(
+      new Request("cloud.get_document", {
+        document,
+      }),
+      true,
     );
   }
 }

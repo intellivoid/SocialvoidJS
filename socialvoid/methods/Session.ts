@@ -1,5 +1,5 @@
 import Request from "../Request.ts";
-import * as types from "../types.ts";
+import { Peer, Session as ISession } from "../types.ts";
 import MethodBase from "./MethodBase.ts";
 import { NAME, PLATFORM, VERSION } from "../constants.ts";
 
@@ -35,10 +35,8 @@ export default class Session extends MethodBase {
   /*
    * Gets information about the current session
    */
-  async get() {
-    return types.Session.fromObject(
-      await this.client.invokeRequest(new Request("session.get"), true),
-    );
+  get(): Promise<ISession> {
+    return this.client.invokeRequest(new Request("session.get"), true);
   }
 
   /**
@@ -75,25 +73,23 @@ export default class Session extends MethodBase {
    * @param firstName The first name of the account.
    * @param lastName An optional last name of the account.
    */
-  async register(
+  register(
     termsOfServiceId: string,
     username: string,
     password: string,
     firstName: string,
     lastName?: string,
-  ) {
-    return types.Peer.fromObject(
-      await this.client.invokeRequest(
-        new Request("session.register", {
-          terms_of_service_id: termsOfServiceId,
-          terms_of_service_agree: true,
-          username,
-          password,
-          first_name: firstName,
-          last_name: lastName,
-        }),
-        true,
-      ),
+  ): Promise<Peer> {
+    return this.client.invokeRequest(
+      new Request("session.register", {
+        terms_of_service_id: termsOfServiceId,
+        terms_of_service_agree: true,
+        username,
+        password,
+        first_name: firstName,
+        last_name: lastName,
+      }),
+      true,
     );
   }
 }

@@ -19,7 +19,7 @@ export default class Account extends MethodBase {
    * @param document The document ID or instance of the profile picture.
    */
   setProfilePicture(document: string | Document) {
-    document = document instanceof Document ? document.id : document;
+    document = typeof document === "string" ? document : document.id;
 
     return this.client.invokeRequest(
       new Request("account.set_profile_picture", {

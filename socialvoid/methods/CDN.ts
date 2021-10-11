@@ -3,22 +3,20 @@ import { formFromObj } from "../utils.ts";
 import MethodBase from "./MethodBase.ts";
 
 export default class CDN extends MethodBase {
-  async upload(document: any) {
+  async upload(document: any): Promise<Document> {
     const form = formFromObj({
       action: "upload",
       document,
       ...(await this.client.sessionId()).session_identification,
     });
 
-    return Document.fromObject(
-      (await this.client.invokeCDNRequest(form)).results,
-    );
+    return (await this.client.invokeCDNRequest(form)).results;
   }
 
   async download(document: string | Document) {
     const form = formFromObj({
       action: "download",
-      document: document instanceof Document ? document.id : document,
+      document: typeof document == "string" ? document : document.id,
       ...(await this.client.sessionId()).session_identification,
     });
 
@@ -28,7 +26,7 @@ export default class CDN extends MethodBase {
   async streamDownload(document: string | Document) {
     const form = formFromObj({
       action: "download",
-      document: document instanceof Document ? document.id : document,
+      document: typeof document == "string" ? document : document.id,
       ...(await this.client.sessionId()).session_identification,
     });
 

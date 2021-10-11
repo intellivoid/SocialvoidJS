@@ -6,9 +6,7 @@ export default class Network extends MethodBase {
   /**
    * Gets the peer of the currently logged in account.
    */
-  async getMe() {
-    return Peer.fromObject(
-      await this.client.invokeRequest(new Request("network.get_me"), true),
-    );
+  getMe(): Promise<Peer> {
+    return this.client.invokeRequest(new Request("network.get_me"), true);
   }
 }
