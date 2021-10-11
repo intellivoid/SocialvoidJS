@@ -67,6 +67,12 @@ export class DocumentNotFound extends NetworkError {}
 
 export class AccessDenied extends NetworkError {}
 
+export class BlockedByPeer extends NetworkError {}
+
+export class BlockedPeer extends NetworkError {}
+
+export class SelfInteractionNotPermitted extends NetworkError {}
+
 export class AuthenticationError extends SocialvoidError {}
 
 export class IncorrectLoginCredentials extends AuthenticationError {}
@@ -128,6 +134,9 @@ const map: { [key: string]: typeof SocialvoidError } = {
   "12548": FileUploadError,
   "12549": DocumentNotFound,
   "12550": AccessDenied,
+  "12551": BlockedByPeer,
+  "12552": BlockedPeer,
+  "12553": SelfInteractionNotPermitted,
   "16384": InternalServerError,
   "16385": DocumentUpload,
 };

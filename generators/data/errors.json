@@ -111,6 +111,18 @@
     "12550": {
       "_": "AccessDenied",
       "description": "The authenticated peer does not have sufficient permissions to access the requested resource or to invoke a restricted method"
+    },
+    "12551": {
+      "_": "BlockedByPeer",
+      "description": "Blocked by the peer which attempted to interact with"
+    },
+    "12552": {
+      "_": "BlockedPeer",
+      "description": "Attempted to interact with a blocked peer"
+    },
+    "12553": {
+      "_": "SelfInteractionNotPermitted",
+      "description": "Cannot interact with self"
     }
   },
   "authentication": {
