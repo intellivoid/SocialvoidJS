@@ -1,6 +1,7 @@
 {
   "_": {
-    "FileType": "\"DOCUMENT\" | \"PHOTO\" | \"VIDEO\" | \"AUDIO\""
+    "FileType": "\"DOCUMENT\" | \"PHOTO\" | \"VIDEO\" | \"AUDIO\"",
+    "PeerType": "\"USER\" | \"BOT\" | \"PROXY\""
   },
   "ServerInformation": {
     "network_name": {
