@@ -6,7 +6,7 @@ await login();
 const id = prompt("ID of the document to be downloaded:")!;
 const result = (await client.cdn.download(id, true)) as Blob;
 
-const writer = await Deno.open(id, { create: true });
+const writer = await Deno.open(id, { create: true, write: true });
 const writeStream = writableStreamFromWriter(writer);
 
 result.stream().pipeTo(writeStream);
