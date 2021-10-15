@@ -12,13 +12,7 @@ export type TextEntityType =
     | "MENTION"
     | "HASHTAG";
 
-export type PostType =
-    | "UNKNOWN"
-    | "DELETED"
-    | "POST"
-    | "REPLY"
-    | "QUOTE"
-    | "REPOST";
+export type PostType = "UNKNOWN" | "DELETED" | "POST" | "REPLY" | "QUOTE" | "REPOST";
 
 export interface Post {
     id: string;
@@ -31,7 +25,8 @@ export interface Post {
     reply_to_post: Post | null;
     quoted_post: Post | null;
     reposted_post: Post | null;
-    likes_count: number | null;
+    original_thread_post: Post | null;
+    like_count: number | null;
     reposts_count: number | null;
     quotes_count: number | null;
     posted_timestamp: number;
