@@ -1,10 +1,8 @@
-import Store from "./Store.ts";
-import FileStore from "./FileStore.ts";
-import MemoryStore from "./MemoryStore.ts";
-import LocalStorageStore from "./LocalStorageStore.ts";
+export * from "./store.ts";
+export * from "./file_store.ts";
+export * from "./memory_store.ts";
+export * from "./localstorage_store.ts";
 
 export type Memory = ":memory:";
 export type FileName = string;
 export type LocalStorageKey = string;
-
-export { FileStore, LocalStorageStore, MemoryStore, Store };

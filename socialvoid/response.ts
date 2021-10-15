@@ -1,6 +1,6 @@
 import { throwError } from "./utils.ts";
 
-export default class Response {
+export class Response {
     id: number;
     success: boolean;
     error?: { code: number; message: string };

@@ -1,16 +1,16 @@
-import Request from "./Request.ts";
-import Response from "./Response.ts";
+import { Request } from "./request.ts";
+import { Response } from "./response.ts";
 import { answerChallenge, parseResponses, serializeRequests } from "./utils.ts";
 import { throwError } from "./utils.ts";
 
-interface Session {
+export interface Session {
     id: string;
     publicHash: string;
     privateHash: string;
     challenge: string;
 }
 
-export default class BaseClient {
+export class BaseClient {
     protected _session?: Session;
 
     constructor(

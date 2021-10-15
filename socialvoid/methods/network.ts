@@ -1,8 +1,8 @@
-import Request from "../Request.ts";
+import { Request } from "../request.ts";
 import { Peer } from "../types.ts";
-import MethodBase from "./MethodBase.ts";
+import { MethodBase } from "./method_base.ts";
 
-export default class Network extends MethodBase {
+export class Network extends MethodBase {
     /**
      * Gets the peer of the currently logged in account.
      */

@@ -1,8 +1,8 @@
-import Request from "../Request.ts";
+import { Request } from "../request.ts";
 import { HelpDocument, ServerInformation } from "../types.ts";
-import MethodBase from "./MethodBase.ts";
+import { MethodBase } from "./method_base.ts";
 
-export default class Help extends MethodBase {
+export class Help extends MethodBase {
     private cachedServerInformation?: ServerInformation;
 
     /**

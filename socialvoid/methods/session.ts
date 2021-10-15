@@ -1,9 +1,9 @@
-import Request from "../Request.ts";
+import { Request } from "../request.ts";
 import { Peer, Session as ISession } from "../types.ts";
-import MethodBase from "./MethodBase.ts";
+import { MethodBase } from "./method_base.ts";
 import { NAME, PLATFORM, VERSION } from "../constants.ts";
 
-export default class Session extends MethodBase {
+export class Session extends MethodBase {
     /*
    * Creates a session.
    *

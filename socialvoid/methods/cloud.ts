@@ -1,8 +1,8 @@
 import { Document } from "../types.ts";
-import MethodBase from "./MethodBase.ts";
-import Request from "../Request.ts";
+import { MethodBase } from "./method_base.ts";
+import { Request } from "../request.ts";
 
-export default class Cloud extends MethodBase {
+export class Cloud extends MethodBase {
     /**
      * Gets a document using its ID or instance.
      */

@@ -1,8 +1,8 @@
-import Request from "../Request.ts";
+import { Request } from "../request.ts";
 import { Document } from "../types.ts";
-import MethodBase from "./MethodBase.ts";
+import { MethodBase } from "./method_base.ts";
 
-export default class Account extends MethodBase {
+export class Account extends MethodBase {
     /**
      * Removes the profile picture of the currently logged in account.
      */

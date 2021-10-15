@@ -1,6 +1,6 @@
 // import { crypto } from "https://deno.land/std@0.110.0/crypto/mod.ts";
-import Request from "./Request.ts";
-import Response from "./Response.ts";
+import { Request } from "./request.ts";
+import { Response } from "./response.ts";
 import { getRandomValues, jsSHA, OTPAuth } from "./deps.deno.ts";
 import map, { SocialvoidError } from "./errors.ts";
 

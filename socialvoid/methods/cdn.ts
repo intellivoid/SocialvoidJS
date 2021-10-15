@@ -1,8 +1,8 @@
 import { Document } from "../types.ts";
 import { formFromObj } from "../utils.ts";
-import MethodBase from "./MethodBase.ts";
+import { MethodBase } from "./method_base.ts";
 
-export default class CDN extends MethodBase {
+export class CDN extends MethodBase {
     async upload(document: any): Promise<Document> {
         const form = formFromObj({
             action: "upload",

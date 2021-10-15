@@ -1,5 +1,5 @@
 import { IS_BROWSER } from "../constants.ts";
-import Store from "./Store.ts";
+import { Store } from "./store.ts";
 
 function resolveToBeSet(toBeSet: any) {
     return JSON.stringify(toBeSet);
@@ -9,7 +9,7 @@ function resolveGot(got: string | null) {
     return got == null ? got : JSON.parse(got);
 }
 
-export default class LocalStorageStore extends Store {
+export class LocalStorageStore extends Store {
     constructor(private id = "main") {
         super();
 

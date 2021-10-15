@@ -1,6 +1,6 @@
-import Store from "./Store.ts";
+import { Store } from "./store.ts";
 
-export default class MemoryStore extends Store {
+export class MemoryStore extends Store {
     private data: { [key: string]: any };
 
     constructor() {

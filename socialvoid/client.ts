@@ -9,10 +9,10 @@ import {
     Store,
 } from "./stores/mod.ts";
 import { Account, CDN, Cloud, Help, Network, Session } from "./methods/mod.ts";
-import BaseClient from "./BaseClient.ts";
+import { BaseClient } from "./base_client.ts";
 import { newHash } from "./utils.ts";
 
-export default class Client extends BaseClient {
+export class Client extends BaseClient {
     help = new Help(this);
     cloud = new Cloud(this);
     network = new Network(this);
