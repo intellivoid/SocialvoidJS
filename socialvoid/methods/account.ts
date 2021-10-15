@@ -18,7 +18,7 @@ export class Account extends MethodBase {
      *
      * @param document The document ID or instance of the profile picture.
      */
-    setProfilePicture(document: string | Document) {
+    setProfilePicture(document: string | Document): Promise<boolean> {
         document = typeof document === "string" ? document : document.id;
 
         return this.client.invokeRequest(
