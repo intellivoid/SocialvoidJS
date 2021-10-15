@@ -40,11 +40,41 @@ export class Account extends MethodBase {
     }
 
     /**
+     * Removes the profile URL of the currently logged in account.
+     */
+    clearProfileURL(): Promise<boolean> {
+        return this.client.invokeRequest(
+            new Request("account.clear_profile_url"),
+            true,
+        );
+    }
+
+    /**
      * Removes the profile location of the currently logged in account.
      */
     clearProfileLocation(): Promise<boolean> {
         return this.client.invokeRequest(
             new Request("account.clear_profile_location"),
+            true,
+        );
+    }
+
+    /**
+     * Updates the profile biography of the currently logged in account.
+     */
+    updateProfileBiography(biography: string): Promise<boolean> {
+        return this.client.invokeRequest(
+            new Request("account.update_profile_biography", { biography }),
+            true,
+        );
+    }
+
+    /**
+     * Updates the profile location of the currently logged in account.
+     */
+    updateProfileLocation(location: string): Promise<boolean> {
+        return this.client.invokeRequest(
+            new Request("account.update_profile_location", { location }),
             true,
         );
     }
