@@ -76,8 +76,10 @@ export class BaseClient {
         return await (await this.sendCDN(data)).json();
     }
 
-    async invokeCDNDownloadRequest(data: FormData) {
-        return await (await this.sendCDN(data)).arrayBuffer();
+    async invokeCDNDownloadRequest(data: FormData, stream?: boolean) {
+        const response = (await this.sendCDN(data));
+
+        return stream ? await response.blob() : await response.arrayBuffer();
     }
 
     async send(data: any) {

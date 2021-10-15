@@ -13,23 +13,13 @@ export class CDN extends MethodBase {
         return (await this.client.invokeCDNRequest(form)).results;
     }
 
-    async download(document: string | Document) {
+    async download(document: string | Document, stream?: boolean) {
         const form = formFromObj({
             action: "download",
             document: typeof document == "string" ? document : document.id,
             ...(await this.client.sessionId()).session_identification,
         });
 
-        return this.client.invokeCDNDownloadRequest(form);
-    }
-
-    async streamDownload(document: string | Document) {
-        const form = formFromObj({
-            action: "download",
-            document: typeof document == "string" ? document : document.id,
-            ...(await this.client.sessionId()).session_identification,
-        });
-
-        return this.client.invokeCDNRequest(form);
+        return this.client.invokeCDNDownloadRequest(form, stream);
     }
 }
