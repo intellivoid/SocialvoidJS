@@ -46,16 +46,21 @@
                 "nullable": true
             },
             "quoted_post": {
-                "type": "Post ",
+                "type": "Post",
                 "description": "The original post that this post is quoting if applicable, otherwise null",
                 "nullable": true
             },
             "reposted_post": {
-                "type": "Post ",
+                "type": "Post",
                 "description": "The original post that this post is reposting if applicable, otherwise null",
                 "nullable": true
             },
-            "likes_count": {
+            "original_thread_post": {
+                "type": "Post",
+                "description": "The original thread post, only applicable to replies. This value indicates the main thread post where all the replies originated from. This value will remain the same for all sub-replies of the main post.",
+                "nullable": true
+            },
+            "like_count": {
                 "type": "number",
                 "description": "The amount of likes that this post has if applicable, otherwise null",
                 "nullable": true
