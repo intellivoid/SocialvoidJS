@@ -1,10 +1,10 @@
 export class SocialvoidError extends Error {
-  message: string;
+    message: string;
 
-  constructor(public errorCode: number, public errorMessage: string) {
-    super();
-    this.message = `Error ${errorCode}: ${errorMessage}`;
-  }
+    constructor(public errorCode: number, public errorMessage: string) {
+        super();
+        this.message = `Error ${errorCode}: ${errorMessage}`;
+    }
 }
 
 export class ValidationError extends SocialvoidError {}
@@ -98,47 +98,47 @@ export class AlreadyAuthenticated extends AuthenticationError {}
 export class SessionExpired extends AuthenticationError {}
 
 const map: { [key: string]: typeof SocialvoidError } = {
-  "8448": InvalidUsername,
-  "8449": InvalidPassword,
-  "8450": InvalidFirstName,
-  "8451": InvalidLastName,
-  "8452": InvalidBiography,
-  "8453": UsernameAlreadyExists,
-  "8454": InvalidPeerInput,
-  "8455": InvalidPostText,
-  "8456": InvalidClientPublicHash,
-  "8457": InvalidClientPrivateHash,
-  "8458": InvalidPlatform,
-  "8459": InvalidVersion,
-  "8460": InvalidClientName,
-  "8461": InvalidSessionIdentification,
-  "8462": InvalidFileForProfilePicture,
-  "8463": FileTooLarge,
-  "8464": InvalidHelpDocumentId,
-  "8465": AgreementRequired,
-  "8704": IncorrectLoginCredentials,
-  "8705": IncorrectTwoFactorAuthenticationCode,
-  "8706": AuthenticationNotApplicable,
-  "8707": SessionNotFound,
-  "8708": NotAuthenticated,
-  "8709": PrivateAccessTokenRequired,
-  "8710": AuthenticationFailure,
-  "8711": BadSessionChallengeAnswer,
-  "8712": TwoFactorAuthenticationRequired,
-  "8713": AlreadyAuthenticated,
-  "8714": SessionExpired,
-  "12544": PeerNotFound,
-  "12545": PostNotFound,
-  "12546": PostDeleted,
-  "12547": AlreadyReposted,
-  "12548": FileUploadError,
-  "12549": DocumentNotFound,
-  "12550": AccessDenied,
-  "12551": BlockedByPeer,
-  "12552": BlockedPeer,
-  "12553": SelfInteractionNotPermitted,
-  "16384": InternalServerError,
-  "16385": DocumentUpload,
+    "8448": InvalidUsername,
+    "8449": InvalidPassword,
+    "8450": InvalidFirstName,
+    "8451": InvalidLastName,
+    "8452": InvalidBiography,
+    "8453": UsernameAlreadyExists,
+    "8454": InvalidPeerInput,
+    "8455": InvalidPostText,
+    "8456": InvalidClientPublicHash,
+    "8457": InvalidClientPrivateHash,
+    "8458": InvalidPlatform,
+    "8459": InvalidVersion,
+    "8460": InvalidClientName,
+    "8461": InvalidSessionIdentification,
+    "8462": InvalidFileForProfilePicture,
+    "8463": FileTooLarge,
+    "8464": InvalidHelpDocumentId,
+    "8465": AgreementRequired,
+    "8704": IncorrectLoginCredentials,
+    "8705": IncorrectTwoFactorAuthenticationCode,
+    "8706": AuthenticationNotApplicable,
+    "8707": SessionNotFound,
+    "8708": NotAuthenticated,
+    "8709": PrivateAccessTokenRequired,
+    "8710": AuthenticationFailure,
+    "8711": BadSessionChallengeAnswer,
+    "8712": TwoFactorAuthenticationRequired,
+    "8713": AlreadyAuthenticated,
+    "8714": SessionExpired,
+    "12544": PeerNotFound,
+    "12545": PostNotFound,
+    "12546": PostDeleted,
+    "12547": AlreadyReposted,
+    "12548": FileUploadError,
+    "12549": DocumentNotFound,
+    "12550": AccessDenied,
+    "12551": BlockedByPeer,
+    "12552": BlockedPeer,
+    "12553": SelfInteractionNotPermitted,
+    "16384": InternalServerError,
+    "16385": DocumentUpload,
 };
 
 export default map;

@@ -1,24 +1,24 @@
 import Store from "./Store.ts";
 
 export default class MemoryStore extends Store {
-  private data: { [key: string]: any };
+    private data: { [key: string]: any };
 
-  constructor() {
-    super();
-    this.data = {};
-  }
+    constructor() {
+        super();
+        this.data = {};
+    }
 
-  set(key: string, value: any) {
-    this.data[key] = value;
-  }
+    set(key: string, value: any) {
+        this.data[key] = value;
+    }
 
-  get(key: string) {
-    return this.data[key];
-  }
+    get(key: string) {
+        return this.data[key];
+    }
 
-  save() {}
+    save() {}
 
-  delete(key: string) {
-    this.data[key] = undefined;
-  }
+    delete(key: string) {
+        this.data[key] = undefined;
+    }
 }

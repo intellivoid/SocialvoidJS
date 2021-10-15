@@ -3,45 +3,45 @@ import { HelpDocument, ServerInformation } from "../types.ts";
 import MethodBase from "./MethodBase.ts";
 
 export default class Help extends MethodBase {
-  private cachedServerInformation?: ServerInformation;
+    private cachedServerInformation?: ServerInformation;
 
-  /**
-   * Retrieves the Community Guidelines.
-   */
-  getCommunityGuidelines(): Promise<HelpDocument> {
-    return this.client.invokeRequest(
-      new Request("help.get_community_guidelines"),
-    );
-  }
-
-  /**
-   * Retrieves the Privacy Policy.
-   */
-  getPrivacyPolicy(): Promise<HelpDocument> {
-    return this.client.invokeRequest(new Request("help.get_privacy_policy"));
-  }
-
-  /*
-   * Retrieves server information.
-   */
-  async getServerInformation(force?: boolean): Promise<ServerInformation> {
-    if (this.cachedServerInformation && !force) {
-      return this.cachedServerInformation;
+    /**
+     * Retrieves the Community Guidelines.
+     */
+    getCommunityGuidelines(): Promise<HelpDocument> {
+        return this.client.invokeRequest(
+            new Request("help.get_community_guidelines"),
+        );
     }
 
-    const serverInformation = await this.client.invokeRequest(
-      new Request("help.get_server_information"),
-    );
+    /**
+     * Retrieves the Privacy Policy.
+     */
+    getPrivacyPolicy(): Promise<HelpDocument> {
+        return this.client.invokeRequest(new Request("help.get_privacy_policy"));
+    }
 
-    this.cachedServerInformation = serverInformation;
+    /*
+   * Retrieves server information.
+   */
+    async getServerInformation(force?: boolean): Promise<ServerInformation> {
+        if (this.cachedServerInformation && !force) {
+            return this.cachedServerInformation;
+        }
 
-    return serverInformation;
-  }
+        const serverInformation = await this.client.invokeRequest(
+            new Request("help.get_server_information"),
+        );
 
-  /*
+        this.cachedServerInformation = serverInformation;
+
+        return serverInformation;
+    }
+
+    /*
    * Retrieves the Terms of Service.
    */
-  getTermsOfService(): Promise<HelpDocument> {
-    return this.client.invokeRequest(new Request("help.get_terms_of_service"));
-  }
+    getTermsOfService(): Promise<HelpDocument> {
+        return this.client.invokeRequest(new Request("help.get_terms_of_service"));
+    }
 }

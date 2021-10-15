@@ -16,11 +16,11 @@ export const isBrowser = typeof window !== "undefined";
 export const os = isBrowser ? "Browser" : process.platform;
 
 export const readTextFileSync = (file: string) => {
-  return readFileSync(file).toString();
+    return readFileSync(file).toString();
 };
 
 export const getRandomValues = (size: number) => {
-  return randomBytes(size).buffer;
+    return randomBytes(size).buffer;
 };
 
 export { jsSHA, OTPAuth };

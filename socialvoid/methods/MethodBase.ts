@@ -1,5 +1,5 @@
 import BaseClient from "../BaseClient.ts";
 
 export default class MethodBase {
-  constructor(protected client: BaseClient) {}
+    constructor(protected client: BaseClient) {}
 }
