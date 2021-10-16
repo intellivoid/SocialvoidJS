@@ -3,6 +3,8 @@ import { Response } from "./response.ts";
 import { answerChallenge, parseResponses, serializeRequests } from "./utils.ts";
 import { throwError } from "./utils.ts";
 
+export class NotInitialized extends Error {}
+
 export interface Session {
     id: string;
     publicHash: string;
@@ -15,8 +17,12 @@ export class BaseClient {
 
     constructor(
         public readonly rpcEndpoint: string,
-        public readonly cdnEndpoint: string,
-    ) {}
+    ) {
+    }
+
+    async getCDNEndpoint(): Promise<string> {
+        throw new Error("Not implemented");
+    }
 
     async sessionId() {
         if (!this._session) {
@@ -93,7 +99,7 @@ export class BaseClient {
     }
 
     async sendCDN(data: FormData) {
-        const response = await fetch(this.cdnEndpoint, {
+        const response = await fetch(await this.getCDNEndpoint(), {
             method: "POST",
             body: data,
         });

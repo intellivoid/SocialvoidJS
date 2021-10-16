@@ -25,9 +25,8 @@ export class Client extends BaseClient {
     constructor(
         store: Memory | FileName | LocalStorageKey | Store = "main",
         rpcEndpoint = "http://socialvoid.qlg1.com:5601",
-        cdnEndpoint = "http://socialvoid.qlg1.com:5602",
     ) {
-        super(rpcEndpoint, cdnEndpoint);
+        super(rpcEndpoint);
 
         this.store = typeof store === "undefined"
             ? new MemoryStore()
@@ -48,6 +47,10 @@ export class Client extends BaseClient {
         this.network = new Network(this);
         this.help = new Help(this);
         this.cloud = new Cloud(this);
+    }
+
+    async getCDNEndpoint(): Promise<string> {
+        return (await this.help.getServerInformation()).cdn_server;
     }
 
     async newSession() {
