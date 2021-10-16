@@ -71,6 +71,10 @@
         "8465": {
             "_": "AgreementRequired",
             "description": "The client/user must agree to the condition to invoke the method"
+        },
+        "8468": {
+            "_": "InvalidUrlValue",
+            "description": "The given URL input is invalid"
         }
     },
     "server": {
