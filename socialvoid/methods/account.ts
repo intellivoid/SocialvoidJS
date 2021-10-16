@@ -78,4 +78,29 @@ export class Account extends MethodBase {
             true,
         );
     }
+
+    /**
+     * Updates the profile name of the currently logged in account.
+     */
+    updateProfileName(firstName: string, lastName?: string): Promise<boolean> {
+        return this.client.invokeRequest(
+            new Request("account.update_profile_name", {
+                first_name: firstName,
+                last_name: lastName,
+            }),
+            true,
+        );
+    }
+
+    /**
+     * Updates the profile name of the currently logged in account.
+     */
+    updateProfileURL(url: string): Promise<boolean> {
+        return this.client.invokeRequest(
+            new Request("account.update_profile_url", {
+                url,
+            }),
+            true,
+        );
+    }
 }
