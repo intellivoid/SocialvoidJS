@@ -93,7 +93,7 @@ export class Account extends MethodBase {
     }
 
     /**
-     * Updates the profile name of the currently logged in account.
+     * Updates the profile URL of the currently logged in account.
      */
     updateProfileURL(url: string): Promise<boolean> {
         return this.client.invokeRequest(
