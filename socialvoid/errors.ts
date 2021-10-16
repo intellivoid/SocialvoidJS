@@ -45,6 +45,8 @@ export class InvalidHelpDocumentId extends ValidationError {}
 
 export class AgreementRequired extends ValidationError {}
 
+export class InvalidUrlValue extends ValidationError {}
+
 export class ServerError extends SocialvoidError {}
 
 export class InternalServerError extends ServerError {}
@@ -116,6 +118,7 @@ const map: { [key: string]: typeof SocialvoidError } = {
     "8463": FileTooLarge,
     "8464": InvalidHelpDocumentId,
     "8465": AgreementRequired,
+    "8468": InvalidUrlValue,
     "8704": IncorrectLoginCredentials,
     "8705": IncorrectTwoFactorAuthenticationCode,
     "8706": AuthenticationNotApplicable,
