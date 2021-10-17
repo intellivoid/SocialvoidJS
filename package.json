@@ -1,39 +1,39 @@
 {
-  "name": "socialvoid",
-  "version": "1.0.0",
-  "description": "Deno, Node.js and browser Socialvoid client.",
-  "main": "dist/mod.js",
-  "scripts": {
-    "generate": "cd generators && deno run --allow-all mod.ts",
-    "bundle:deno": "deno bundle socialvoid/mod.ts socialvoid.js",
-    "bundle:webpack": "webpack",
-    "bundle": "npm run bundle:deno && npm run bundle:webpack",
-    "deno2node": "deno2node tsconfig.json",
-    "build": "npm run deno2node && npm run bundle"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/intellivoid/Socialvoid-Deno.git"
-  },
-  "author": "Roj Serbest <roj@rojser.best>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/intellivoid/Socialvoid-Deno/issues"
-  },
-  "homepage": "https://github.com/intellivoid/Socialvoid-Deno#readme",
-  "dependencies": {
-    "form-data": "^4.0.0",
-    "node-fetch": "^2.6.5",
-    "otpauth": "^7.0.6"
-  },
-  "devDependencies": {
-    "@types/node-fetch": "^2.5.12",
-    "@webpack-cli/generators": "^2.4.0",
-    "crypto-browserify": "^3.12.0",
-    "deno2node": "^1.0.0",
-    "stream-browserify": "^3.0.0",
-    "typescript": "^4.4.3",
-    "webpack": "^5.58.1",
-    "webpack-cli": "^4.9.0"
-  }
+    "name": "socialvoid",
+    "version": "0.0.0.test.0",
+    "description": "Deno, Node.js and browser Socialvoid client.",
+    "main": "dist/mod.js",
+    "scripts": {
+        "generate": "cd generators && deno run --allow-all mod.ts",
+        "bundle:deno": "deno bundle socialvoid/mod.ts socialvoid.js",
+        "bundle:webpack": "webpack",
+        "bundle": "npm run bundle:deno && npm run bundle:webpack",
+        "deno2node": "deno2node tsconfig.json",
+        "build": "npm run deno2node && npm run bundle"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/intellivoid/Socialvoid-Deno.git"
+    },
+    "author": "Roj Serbest <roj@rojser.best>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/intellivoid/Socialvoid-Deno/issues"
+    },
+    "homepage": "https://github.com/intellivoid/Socialvoid-Deno#readme",
+    "dependencies": {
+        "form-data": "^4.0.0",
+        "node-fetch": "^2.6.5",
+        "otpauth": "^7.0.6"
+    },
+    "devDependencies": {
+        "@types/node-fetch": "^2.5.12",
+        "@webpack-cli/generators": "^2.4.0",
+        "crypto-browserify": "^3.12.0",
+        "deno2node": "^1.0.0",
+        "stream-browserify": "^3.0.0",
+        "typescript": "^4.4.3",
+        "webpack": "^5.58.1",
+        "webpack-cli": "^4.9.0"
+    }
 }
