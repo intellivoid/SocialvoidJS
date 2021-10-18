@@ -1,6 +1,6 @@
 {
     "name": "socialvoid",
-    "version": "0.0.0-alpha.0",
+    "version": "0.0.0-alpha.1",
     "description": "Deno, Node.js and browser Socialvoid client.",
     "main": "dist/mod.js",
     "scripts": {
