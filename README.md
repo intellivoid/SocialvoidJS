@@ -35,6 +35,24 @@ npm run bundle:deno
 npm run build
 ```
 
+## Usage with Next.js
+
+SocialvoidJS can be used with Next.js, with the following configuration:
+
+```bash
+{
+  webpack: (config) => {
+    if (typeof config.resolve.fallback !== "undefined") {
+      config.resolve.fallback.fs = false;
+    }
+
+    return config;
+  },
+}
+```
+
+React.js support is untested, but should work if you can configure Webpack like mentioned in above.
+
 ## Examples
 
 See [`examples/`](./examples).
