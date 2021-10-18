@@ -35,7 +35,7 @@ npm run bundle:deno
 npm run build
 ```
 
-## Usage with Next.js
+## Using with Next.js
 
 SocialvoidJS can be used with Next.js, with the following configuration:
 
