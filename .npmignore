@@ -1,2 +1,12 @@
 tsconfig.json
 deno.json
+.vscode
+out/
+socialvoid/
+examples/
+generators/
+webpack.config.js
+socialvoid.js
+main.json
+*.txt
+README.md
