@@ -25,6 +25,7 @@ export class Client extends BaseClient {
     constructor(
         store: Memory | FileName | LocalStorageKey | Store = "main",
         rpcEndpoint = "http://socialvoid.qlg1.com:5601",
+        public customCDNEndpoint?: string,
     ) {
         super(rpcEndpoint);
 
@@ -50,6 +51,10 @@ export class Client extends BaseClient {
     }
 
     async getCDNEndpoint(): Promise<string> {
+        if (this.customCDNEndpoint) {
+            return this.customCDNEndpoint;
+        }
+
         return (await this.help.getServerInformation()).cdn_server;
     }
 
