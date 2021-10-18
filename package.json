@@ -1,6 +1,6 @@
 {
     "name": "socialvoid",
-    "version": "0.0.0-test.0",
+    "version": "0.0.0-alpha.0",
     "description": "Deno, Node.js and browser Socialvoid client.",
     "main": "dist/mod.js",
     "scripts": {
@@ -8,7 +8,7 @@
         "bundle:deno": "deno bundle socialvoid/mod.ts socialvoid.js",
         "bundle:webpack": "webpack",
         "bundle": "npm run bundle:deno && npm run bundle:webpack",
-        "deno2node": "deno2node tsconfig.json",
+        "deno2node": "rm -r dist && deno2node tsconfig.json",
         "build": "npm run deno2node && npm run bundle"
     },
     "repository": {
@@ -27,6 +27,7 @@
         "otpauth": "^7.0.6"
     },
     "devDependencies": {
+        "@types/node": "^16.11.1",
         "@types/node-fetch": "^2.5.12",
         "@webpack-cli/generators": "^2.4.0",
         "crypto-browserify": "^3.12.0",
