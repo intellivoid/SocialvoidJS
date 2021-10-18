@@ -3,7 +3,8 @@
         "FileType": "\"DOCUMENT\" | \"PHOTO\" | \"VIDEO\" | \"AUDIO\"",
         "PeerType": "\"USER\" | \"BOT\" | \"PROXY\"",
         "TextEntityType": "\"BOLD\" | \"ITALIC\" | \"CODE\" | \"STRIKE\" | \"UNDERLINE\" | \"URL\" | \"MENTION\" | \"HASHTAG\"",
-        "PostType": "\"UNKNOWN\" | \"DELETED\" | \"POST\" | \"REPLY\" | \"QUOTE\" | \"REPOST\""
+        "PostType": "\"UNKNOWN\" | \"DELETED\" | \"POST\" | \"REPLY\" | \"QUOTE\" | \"REPOST\"",
+        "RelationshipType": "\"NONE\" | \"FOLLOWING\" | \"FOLLOWS_YOU\" | \"AWAITING_APPROVAL\" | \"MUTUALLY_FOLLOWING\" | \"BLOCKED\" | \"BLOCKED_YOU\""
     },
     "interfaces": {
         "Post": {

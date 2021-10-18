@@ -14,6 +14,15 @@ export type TextEntityType =
 
 export type PostType = "UNKNOWN" | "DELETED" | "POST" | "REPLY" | "QUOTE" | "REPOST";
 
+export type RelationshipType =
+    | "NONE"
+    | "FOLLOWING"
+    | "FOLLOWS_YOU"
+    | "AWAITING_APPROVAL"
+    | "MUTUALLY_FOLLOWING"
+    | "BLOCKED"
+    | "BLOCKED_YOU";
+
 export interface Post {
     id: string;
     type: PostType;
