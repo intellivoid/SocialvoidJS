@@ -1,8 +1,8 @@
 {
-  "deno.enable": true,
-  "deno.suggest.imports.hosts": {
-    "https://deno.land": true
-  },
-  "editor.formatOnSave": true,
-  "deno.config": "./deno.json"
+    "deno.enable": true,
+    "deno.suggest.imports.hosts": {
+        "https://deno.land": true
+    },
+    "editor.formatOnSave": true,
+    "deno.config": "./deno.json"
 }

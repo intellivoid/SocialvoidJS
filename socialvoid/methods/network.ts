@@ -12,6 +12,8 @@ export class Network extends MethodBase {
 
     /**
      * Gets the profile of a peer using its instance or ID.
+     *
+     * @param peer The ID, handle (with a leading @) or instance of the peer. The default value is the authenticated user.
      */
     getProfile(peer?: string | Peer): Promise<Profile> {
         return this.client.invokeRequest(
@@ -25,7 +27,10 @@ export class Network extends MethodBase {
     }
 
     /**
-     * Returns an array of peers that the requested peer is following.
+     * Returns an array of peers who follow the given peer.
+     *
+     * @param peer The ID, handle (with a leading @) or instance of the peer. The default value is the authenticated user.
+     * @param cursor The current cursor (page number) of the return results. The default value is `1`.
      */
     getFollowing(peer?: string | Peer, cursor?: number): Promise<Peer[]> {
         return this.client.invokeRequest(
@@ -41,6 +46,9 @@ export class Network extends MethodBase {
 
     /**
      * Returns an array of peers who follow the given peer.
+     *
+     * @param peer The ID, handle (with a leading @) or instance of the peer. The default value is the authenticated user.
+     * @param cursor The current cursor (page number) of the return results. The default value is `1`.
      */
     getFollowers(peer?: string | Peer, cursor?: number): Promise<Peer[]> {
         return this.client.invokeRequest(
@@ -56,6 +64,8 @@ export class Network extends MethodBase {
 
     /**
      * Follows another peer on the network.
+     *
+     * @param peer The ID, handle (with a leading @) or instance of the peer to follow.
      */
     followPeer(peer: string | Peer): Promise<RelationshipType> {
         return this.client.invokeRequest(
@@ -68,6 +78,8 @@ export class Network extends MethodBase {
 
     /**
      * Unfollows another peer on the network.
+     *
+     * @param peer The ID, handle (with a leading @) or instance of the peer to unfollow.
      */
     unfollowPeer(peer: string | Peer): Promise<RelationshipType> {
         return this.client.invokeRequest(
