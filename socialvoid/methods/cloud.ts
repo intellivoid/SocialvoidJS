@@ -4,7 +4,9 @@ import { Request } from "../request.ts";
 
 export class Cloud extends MethodBase {
     /**
-     * Gets a document using its ID or instance.
+     * Resolves a document.
+     *
+     * @param document The ID or instance of the document.
      */
     getDocument(document: string | Document): Promise<Document> {
         document = typeof document == "string" ? document : document.id;
