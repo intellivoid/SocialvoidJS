@@ -61,6 +61,8 @@ export class Account extends MethodBase {
 
     /**
      * Updates the profile biography of the currently logged in account.
+     *
+     * @param biography The new biography.
      */
     updateProfileBiography(biography: string): Promise<boolean> {
         return this.client.invokeRequest(
@@ -71,6 +73,8 @@ export class Account extends MethodBase {
 
     /**
      * Updates the profile location of the currently logged in account.
+     *
+     * @param location The new location
      */
     updateProfileLocation(location: string): Promise<boolean> {
         return this.client.invokeRequest(
@@ -81,6 +85,9 @@ export class Account extends MethodBase {
 
     /**
      * Updates the profile name of the currently logged in account.
+     *
+     * @param firstName The new first name.
+     * @param lastName The new last name. Will get removed if not passed.
      */
     updateProfileName(firstName: string, lastName?: string): Promise<boolean> {
         return this.client.invokeRequest(
@@ -94,6 +101,8 @@ export class Account extends MethodBase {
 
     /**
      * Updates the profile URL of the currently logged in account.
+     *
+     * @param url The new URL.
      */
     updateProfileURL(url: string): Promise<boolean> {
         return this.client.invokeRequest(
