@@ -30,15 +30,15 @@ export class Network extends MethodBase {
      * Returns an array of peers who follow the given peer.
      *
      * @param peer The ID, handle (with a leading @) or instance of the peer. The default value is the authenticated user.
-     * @param cursor The current cursor (page number) of the return results. The default value is `1`.
+     * @param page The current page number of the return results. The default value is `1`.
      */
-    getFollowing(peer?: string | Peer, cursor?: number): Promise<Peer[]> {
+    getFollowing(peer?: string | Peer, page?: number): Promise<Peer[]> {
         return this.client.invokeRequest(
             new Request("network.get_following", {
                 peer: typeof peer !== "undefined"
                     ? typeof peer == "string" ? peer : peer.id
                     : undefined,
-                cursor,
+                page,
             }),
             true,
         );
@@ -48,15 +48,15 @@ export class Network extends MethodBase {
      * Returns an array of peers who follow the given peer.
      *
      * @param peer The ID, handle (with a leading @) or instance of the peer. The default value is the authenticated user.
-     * @param cursor The current cursor (page number) of the return results. The default value is `1`.
+     * @param page The current page number of the return results. The default value is `1`.
      */
-    getFollowers(peer?: string | Peer, cursor?: number): Promise<Peer[]> {
+    getFollowers(peer?: string | Peer, page?: number): Promise<Peer[]> {
         return this.client.invokeRequest(
             new Request("network.get_followers", {
                 peer: typeof peer !== "undefined"
                     ? typeof peer == "string" ? peer : peer.id
                     : undefined,
-                cursor,
+                page,
             }),
             true,
         );

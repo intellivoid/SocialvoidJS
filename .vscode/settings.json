@@ -4,5 +4,8 @@
         "https://deno.land": true
     },
     "editor.formatOnSave": true,
-    "deno.config": "./deno.json"
+    "deno.config": "./deno.json",
+    "[typescript]": {
+        "editor.defaultFormatter": "denoland.vscode-deno"
+    }
 }
