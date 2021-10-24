@@ -43,3 +43,11 @@
 ## Timeline
 
 - [ ] compose
+- [ ] delete
+- [ ] get_likes
+- [ ] get_post
+- [ ] get_quotes
+- [ ] get_replies
+- [ ] get_reposted_peers
+- [ ] like
+- [ ] retrieve_feed
