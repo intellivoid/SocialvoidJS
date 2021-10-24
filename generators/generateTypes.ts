@@ -34,7 +34,7 @@ for (const name in types.interfaces) {
 
     for (const name in params) {
         const param = params[name];
-
+        code += `\n/** ${param.description} */\n`;
         code += `${name}: ${param.type}`;
 
         if (param.nullable) {
