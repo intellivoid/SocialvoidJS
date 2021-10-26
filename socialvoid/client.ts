@@ -8,7 +8,7 @@ import {
     MemoryStore,
     Store,
 } from "./stores/mod.ts";
-import { Account, CDN, Cloud, Help, Network, Session } from "./methods/mod.ts";
+import { Account, CDN, Cloud, Help, Network, Session, Timeline } from "./methods/mod.ts";
 import { BaseClient } from "./base_client.ts";
 import { newHash } from "./utils.ts";
 
@@ -19,6 +19,7 @@ export class Client extends BaseClient {
     session = new Session(this);
     account = new Account(this);
     cdn = new CDN(this);
+    timeline = new Timeline(this);
 
     private store: Store;
 

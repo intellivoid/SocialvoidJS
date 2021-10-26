@@ -44,10 +44,10 @@
 
 - [x] compose
 - [x] delete
-- [ ] get_likes
-- [ ] get_post
-- [ ] get_quotes
-- [ ] get_replies
-- [ ] get_reposted_peers
-- [ ] like
-- [ ] retrieve_feed
+- [x] get_likes
+- [x] get_post
+- [x] get_quotes
+- [x] get_replies
+- [x] get_reposted_peers
+- [x] like
+- [x] retrieve_feed
