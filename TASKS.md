@@ -42,8 +42,8 @@
 
 ## Timeline
 
-- [ ] compose
-- [ ] delete
+- [x] compose
+- [x] delete
 - [ ] get_likes
 - [ ] get_post
 - [ ] get_quotes
