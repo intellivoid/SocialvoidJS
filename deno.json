@@ -1,11 +1,10 @@
 {
-    "fmt": {
-        "files": {
-            "include": ["socialvoid", "examples", "generators"]
-        },
-        "options": {
-            "indentWidth": 4,
-            "lineWidth": 100
-        }
+  "fmt": {
+    "files": {
+      "include": ["socialvoid", "examples", "generators"]
+    },
+    "options": {
+      "lineWidth": 100
     }
+  }
 }

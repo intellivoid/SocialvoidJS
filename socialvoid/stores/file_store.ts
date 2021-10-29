@@ -3,37 +3,37 @@ import { Store } from "./store.ts";
 import { readTextFileSync, writeTextFileSync } from "../deps.deno.ts";
 
 export class FileStore extends Store {
-    data: { [key: string]: any };
+  data: { [key: string]: any };
 
-    constructor(public readonly file: string) {
-        super();
+  constructor(public readonly file: string) {
+    super();
 
-        if (IS_BROWSER) {
-            throw new Error("Cannot use `FileStore` on browsers");
-        }
-
-        this.file = this.file + ".json";
-
-        try {
-            this.data = JSON.parse(readTextFileSync(this.file));
-        } catch (_) {
-            this.data = {};
-        }
+    if (IS_BROWSER) {
+      throw new Error("Cannot use `FileStore` on browsers");
     }
 
-    set(key: string, value: any) {
-        this.data[key] = value;
-    }
+    this.file = this.file + ".json";
 
-    get(key: string) {
-        return this.data[key];
+    try {
+      this.data = JSON.parse(readTextFileSync(this.file));
+    } catch (_) {
+      this.data = {};
     }
+  }
 
-    save() {
-        writeTextFileSync(this.file, JSON.stringify(this.data));
-    }
+  set(key: string, value: any) {
+    this.data[key] = value;
+  }
 
-    delete(key: string) {
-        this.data[key] = undefined;
-    }
+  get(key: string) {
+    return this.data[key];
+  }
+
+  save() {
+    writeTextFileSync(this.file, JSON.stringify(this.data));
+  }
+
+  delete(key: string) {
+    this.data[key] = undefined;
+  }
 }

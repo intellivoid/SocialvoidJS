@@ -1,11 +1,11 @@
 export class Request {
-    id?: string;
+  id?: string;
 
-    constructor(
-        public method: string,
-        public params?: any,
-        public notification = false,
-    ) {
-        this.id = notification ? undefined : String(Date.now());
-    }
+  constructor(
+    public method: string,
+    public params?: any,
+    public notification = false,
+  ) {
+    this.id = notification ? undefined : String(Date.now());
+  }
 }

@@ -12,7 +12,7 @@ export const writeTextFileSync = isBrowser ? (...args: any) => {} : Deno.writeTe
 export const readTextFileSync = isBrowser ? (...args: any) => "" : Deno.readTextFileSync;
 
 export const getRandomValues = (size: number) => {
-    return crypto.getRandomValues(new Uint8Array(size)).buffer;
+  return crypto.getRandomValues(new Uint8Array(size)).buffer;
 };
 
 export { jsSHA, OTPAuth };

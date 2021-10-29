@@ -1,178 +1,178 @@
 {
-    "validation": {
-        "8448": {
-            "_": "InvalidUsername",
-            "description": "The given username is invalid and does not meet the specification"
-        },
-        "8449": {
-            "_": "InvalidPassword",
-            "description": "The given password is insecure, see the message for further details"
-        },
-        "8450": {
-            "_": "InvalidFirstName",
-            "description": "The First Name provided contains invalid characters and or is too long, see the message for further details"
-        },
-        "8451": {
-            "_": "InvalidLastName",
-            "description": "The Last Name provided contains invalid characters and or is too long, see the message for further details "
-        },
-        "8452": {
-            "_": "InvalidBiography",
-            "description": "The Biography is too long or contains invalid characters, see the message for further details"
-        },
-        "8453": {
-            "_": "UsernameAlreadyExists",
-            "description": "The username is already registered in the network and cannot be used                                       "
-        },
-        "8454": {
-            "_": "InvalidPeerInput",
-            "description": "The client provided an invalid peer identification as input"
-        },
-        "8455": {
-            "_": "InvalidPostText",
-            "description": "The post contains invalid characters or is too long, see the message for further details"
-        },
-        "8456": {
-            "_": "InvalidClientPublicHash",
-            "description": "The client's public hash is invalid and cannot be identified as a sha256"
-        },
-        "8457": {
-            "_": "InvalidClientPrivateHash",
-            "description": "The client's private hash is invalid and cannot be identified as a sha256"
-        },
-        "8458": {
-            "_": "InvalidPlatform",
-            "description": "The platform name contains invalid characters or is too long, see the message for further details"
-        },
-        "8459": {
-            "_": "InvalidVersion",
-            "description": "The version is invalid or is too long, see the message for further details"
-        },
-        "8460": {
-            "_": "InvalidClientName",
-            "description": "The client name contains invalid characters or is too long, see the message for further details"
-        },
-        "8461": {
-            "_": "InvalidSessionIdentification",
-            "description": "The session identification object is invalid, see the message for further details"
-        },
-        "8462": {
-            "_": "InvalidFileForProfilePicture",
-            "description": "The given file is invalid for a profile picture"
-        },
-        "8463": {
-            "_": "FileTooLarge",
-            "description": "The given file is too large to be processed"
-        },
-        "8464": {
-            "_": "InvalidHelpDocumentId",
-            "description": "The given Help Document ID is invalid"
-        },
-        "8465": {
-            "_": "AgreementRequired",
-            "description": "The client/user must agree to the condition to invoke the method"
-        },
-        "8468": {
-            "_": "InvalidUrlValue",
-            "description": "The given URL input is invalid"
-        }
+  "validation": {
+    "8448": {
+      "_": "InvalidUsername",
+      "description": "The given username is invalid and does not meet the specification"
     },
-    "server": {
-        "16384": {
-            "_": "InternalServerError",
-            "description": "Raised when there was an unexpected error while trying to process your request"
-        },
-        "16385": {
-            "_": "DocumentUpload",
-            "description": "Raised when there was an error while trying to process the document upload"
-        }
+    "8449": {
+      "_": "InvalidPassword",
+      "description": "The given password is insecure, see the message for further details"
     },
-    "network": {
-        "12544": {
-            "_": "PeerNotFound",
-            "description": "The requested user entity was not found in the network"
-        },
-        "12545": {
-            "_": "PostNotFound",
-            "description": "Raised when the client requested a post that isn't found"
-        },
-        "12546": {
-            "_": "PostDeleted",
-            "description": "Raised when the client requested a post that was deleted"
-        },
-        "12547": {
-            "_": "AlreadyReposted",
-            "description": "Raised when the client attempts to repost a post that has already been reposted"
-        },
-        "12548": {
-            "_": "FileUploadError",
-            "description": "Raised when there was an error while trying to upload one or more files to the network"
-        },
-        "12549": {
-            "_": "DocumentNotFound",
-            "description": "The requested Document ID was not found on the server"
-        },
-        "12550": {
-            "_": "AccessDenied",
-            "description": "The authenticated peer does not have sufficient permissions to access the requested resource or to invoke a restricted method"
-        },
-        "12551": {
-            "_": "BlockedByPeer",
-            "description": "Blocked by the peer which attempted to interact with"
-        },
-        "12552": {
-            "_": "BlockedPeer",
-            "description": "Attempted to interact with a blocked peer"
-        },
-        "12553": {
-            "_": "SelfInteractionNotPermitted",
-            "description": "Cannot interact with self"
-        }
+    "8450": {
+      "_": "InvalidFirstName",
+      "description": "The First Name provided contains invalid characters and or is too long, see the message for further details"
     },
-    "authentication": {
-        "8704": {
-            "_": "IncorrectLoginCredentials",
-            "description": "The given login credentials are incorrect"
-        },
-        "8705": {
-            "_": "IncorrectTwoFactorAuthenticationCode",
-            "description": "The given two-factor authentication code is incorrect"
-        },
-        "8706": {
-            "_": "AuthenticationNotApplicable",
-            "description": "Raised when the user does not support this method of authentication, see the message for further details"
-        },
-        "8707": {
-            "_": "SessionNotFound",
-            "description": "Raised when the requested session was not found in the network"
-        },
-        "8708": {
-            "_": "NotAuthenticated",
-            "description": "Raised when the client attempts to invoke a method that requires authentication"
-        },
-        "8709": {
-            "_": "PrivateAccessTokenRequired",
-            "description": "Raised when the user/entity uses a Private Access Token to authenticate and the client attempted to authenticate in another way"
-        },
-        "8710": {
-            "_": "AuthenticationFailure",
-            "description": "The authentication process failed for some unexpected reason, see the message for further details"
-        },
-        "8711": {
-            "_": "BadSessionChallengeAnswer",
-            "description": "The given session challenge answer is incorrect or out of sync"
-        },
-        "8712": {
-            "_": "TwoFactorAuthenticationRequired",
-            "description": "Two-Factor Authentication is required, the client must repeat the same request but provide a Two-Factor authentication code as well"
-        },
-        "8713": {
-            "_": "AlreadyAuthenticated",
-            "description": "The client is attempting to authenticate when already authenticated"
-        },
-        "8714": {
-            "_": "SessionExpired",
-            "description": "Raised when trying to use a session that has expired"
-        }
+    "8451": {
+      "_": "InvalidLastName",
+      "description": "The Last Name provided contains invalid characters and or is too long, see the message for further details "
+    },
+    "8452": {
+      "_": "InvalidBiography",
+      "description": "The Biography is too long or contains invalid characters, see the message for further details"
+    },
+    "8453": {
+      "_": "UsernameAlreadyExists",
+      "description": "The username is already registered in the network and cannot be used                                       "
+    },
+    "8454": {
+      "_": "InvalidPeerInput",
+      "description": "The client provided an invalid peer identification as input"
+    },
+    "8455": {
+      "_": "InvalidPostText",
+      "description": "The post contains invalid characters or is too long, see the message for further details"
+    },
+    "8456": {
+      "_": "InvalidClientPublicHash",
+      "description": "The client's public hash is invalid and cannot be identified as a sha256"
+    },
+    "8457": {
+      "_": "InvalidClientPrivateHash",
+      "description": "The client's private hash is invalid and cannot be identified as a sha256"
+    },
+    "8458": {
+      "_": "InvalidPlatform",
+      "description": "The platform name contains invalid characters or is too long, see the message for further details"
+    },
+    "8459": {
+      "_": "InvalidVersion",
+      "description": "The version is invalid or is too long, see the message for further details"
+    },
+    "8460": {
+      "_": "InvalidClientName",
+      "description": "The client name contains invalid characters or is too long, see the message for further details"
+    },
+    "8461": {
+      "_": "InvalidSessionIdentification",
+      "description": "The session identification object is invalid, see the message for further details"
+    },
+    "8462": {
+      "_": "InvalidFileForProfilePicture",
+      "description": "The given file is invalid for a profile picture"
+    },
+    "8463": {
+      "_": "FileTooLarge",
+      "description": "The given file is too large to be processed"
+    },
+    "8464": {
+      "_": "InvalidHelpDocumentId",
+      "description": "The given Help Document ID is invalid"
+    },
+    "8465": {
+      "_": "AgreementRequired",
+      "description": "The client/user must agree to the condition to invoke the method"
+    },
+    "8468": {
+      "_": "InvalidUrlValue",
+      "description": "The given URL input is invalid"
     }
+  },
+  "server": {
+    "16384": {
+      "_": "InternalServerError",
+      "description": "Raised when there was an unexpected error while trying to process your request"
+    },
+    "16385": {
+      "_": "DocumentUpload",
+      "description": "Raised when there was an error while trying to process the document upload"
+    }
+  },
+  "network": {
+    "12544": {
+      "_": "PeerNotFound",
+      "description": "The requested user entity was not found in the network"
+    },
+    "12545": {
+      "_": "PostNotFound",
+      "description": "Raised when the client requested a post that isn't found"
+    },
+    "12546": {
+      "_": "PostDeleted",
+      "description": "Raised when the client requested a post that was deleted"
+    },
+    "12547": {
+      "_": "AlreadyReposted",
+      "description": "Raised when the client attempts to repost a post that has already been reposted"
+    },
+    "12548": {
+      "_": "FileUploadError",
+      "description": "Raised when there was an error while trying to upload one or more files to the network"
+    },
+    "12549": {
+      "_": "DocumentNotFound",
+      "description": "The requested Document ID was not found on the server"
+    },
+    "12550": {
+      "_": "AccessDenied",
+      "description": "The authenticated peer does not have sufficient permissions to access the requested resource or to invoke a restricted method"
+    },
+    "12551": {
+      "_": "BlockedByPeer",
+      "description": "Blocked by the peer which attempted to interact with"
+    },
+    "12552": {
+      "_": "BlockedPeer",
+      "description": "Attempted to interact with a blocked peer"
+    },
+    "12553": {
+      "_": "SelfInteractionNotPermitted",
+      "description": "Cannot interact with self"
+    }
+  },
+  "authentication": {
+    "8704": {
+      "_": "IncorrectLoginCredentials",
+      "description": "The given login credentials are incorrect"
+    },
+    "8705": {
+      "_": "IncorrectTwoFactorAuthenticationCode",
+      "description": "The given two-factor authentication code is incorrect"
+    },
+    "8706": {
+      "_": "AuthenticationNotApplicable",
+      "description": "Raised when the user does not support this method of authentication, see the message for further details"
+    },
+    "8707": {
+      "_": "SessionNotFound",
+      "description": "Raised when the requested session was not found in the network"
+    },
+    "8708": {
+      "_": "NotAuthenticated",
+      "description": "Raised when the client attempts to invoke a method that requires authentication"
+    },
+    "8709": {
+      "_": "PrivateAccessTokenRequired",
+      "description": "Raised when the user/entity uses a Private Access Token to authenticate and the client attempted to authenticate in another way"
+    },
+    "8710": {
+      "_": "AuthenticationFailure",
+      "description": "The authentication process failed for some unexpected reason, see the message for further details"
+    },
+    "8711": {
+      "_": "BadSessionChallengeAnswer",
+      "description": "The given session challenge answer is incorrect or out of sync"
+    },
+    "8712": {
+      "_": "TwoFactorAuthenticationRequired",
+      "description": "Two-Factor Authentication is required, the client must repeat the same request but provide a Two-Factor authentication code as well"
+    },
+    "8713": {
+      "_": "AlreadyAuthenticated",
+      "description": "The client is attempting to authenticate when already authenticated"
+    },
+    "8714": {
+      "_": "SessionExpired",
+      "description": "Raised when trying to use a session that has expired"
+    }
+  }
 }
