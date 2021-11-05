@@ -32,7 +32,7 @@ export class Timeline extends MethodBase {
    *
    * @param post The ID or instance of the post to be deleted.
    */
-  delete(post: string | Post): Promise<Post> {
+  delete(post: string | Post): Promise<boolean> {
     return this.client.invokeRequest(
       new Request("timeline.delete", {
         post: typeof post === "string" ? post : post.id,
@@ -124,9 +124,23 @@ export class Timeline extends MethodBase {
    *
    * @param post The ID or instance of the post to like.
    */
-  like(post: string | Post): Promise<Post> {
+  like(post: string | Post): Promise<boolean> {
     return this.client.invokeRequest(
       new Request("timeline.like", {
+        post: typeof post === "string" ? post : post.id,
+      }),
+      true,
+    );
+  }
+
+  /**
+   * Likes an existing post on the timeline.
+   *
+   * @param post The ID or instance of the post to like.
+   */
+  unlike(post: string | Post): Promise<boolean> {
+    return this.client.invokeRequest(
+      new Request("timeline.unlike", {
         post: typeof post === "string" ? post : post.id,
       }),
       true,
