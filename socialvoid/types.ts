@@ -12,13 +12,7 @@ export type TextEntityType =
   | "MENTION"
   | "HASHTAG";
 
-export type PostType =
-  | "UNKNOWN"
-  | "DELETED"
-  | "POST"
-  | "REPLY"
-  | "QUOTE"
-  | "REPOST";
+export type PostType = "UNKNOWN" | "DELETED" | "POST" | "REPLY" | "QUOTE" | "REPOST";
 
 export type RelationshipType =
   | "NONE"
@@ -55,9 +49,9 @@ export interface Post {
   /** The amount of likes that this post has if applicable, otherwise null */
   like_count: number | null;
   /** The amount of repost that this post has if applicable, otherwise null */
-  reposts_count: number | null;
+  repost_count: number | null;
   /** The amount of replies that this post has if applicable, otherwise null */
-  quotes_count: number | null;
+  quote_count: number | null;
   /** The Unix Timestamp for when this post was created */
   posted_timestamp: number;
   /** The flags associated with this post (WIP) */

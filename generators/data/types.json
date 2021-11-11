@@ -66,12 +66,12 @@
         "description": "The amount of likes that this post has if applicable, otherwise null",
         "nullable": true
       },
-      "reposts_count": {
+      "repost_count": {
         "type": "number",
         "description": "The amount of repost that this post has if applicable, otherwise null",
         "nullable": true
       },
-      "quotes_count": {
+      "quote_count": {
         "type": "number",
         "description": "The amount of replies that this post has if applicable, otherwise null",
         "nullable": true
