@@ -1,5 +1,5 @@
 import { Request } from "../request.ts";
-import { Peer, Profile, RelationshipType } from "../types.ts";
+import { Peer, Profile } from "../types.ts";
 import { MethodBase } from "./method_base.ts";
 
 export class Network extends MethodBase {
@@ -61,7 +61,7 @@ export class Network extends MethodBase {
    *
    * @param peer The ID, handle (with a leading @) or instance of the peer to follow.
    */
-  followPeer(peer: string | Peer): Promise<RelationshipType> {
+  followPeer(peer: string | Peer): Promise<string> {
     return this.client.invokeRequest(
       new Request("network.follow_peer", {
         peer: typeof peer == "string" ? peer : peer.id,
@@ -75,7 +75,7 @@ export class Network extends MethodBase {
    *
    * @param peer The ID, handle (with a leading @) or instance of the peer to unfollow.
    */
-  unfollowPeer(peer: string | Peer): Promise<RelationshipType> {
+  unfollowPeer(peer: string | Peer): Promise<string> { // TODO: RelationshipType
     return this.client.invokeRequest(
       new Request("network.unfollow_peer", {
         peer: typeof peer == "string" ? peer : peer.id,
