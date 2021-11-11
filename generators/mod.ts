@@ -1,2 +1,1 @@
-import "./generateErrors.ts";
-import "./generateTypes.ts";
+import "./generate.ts";
