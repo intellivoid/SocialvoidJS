@@ -188,12 +188,6 @@
       "error_code": 8471
     },
     {
-      "id": "1209e4fc",
-      "name": "InvalidFileName",
-      "description": "Raised when the given filename is invalid",
-      "error_code": 8471
-    },
-    {
       "id": "8611fbfa",
       "name": "InvalidGeoLocation",
       "description": "The given geo location value is invalid or too long",
@@ -233,7 +227,7 @@
       "id": "54854690",
       "name": "InvalidPlatform",
       "description": "The platform name contains invalid characters or is too long, see the message for further details",
-      "error_code": 8464
+      "error_code": 8458
     },
     {
       "id": "f1351689",

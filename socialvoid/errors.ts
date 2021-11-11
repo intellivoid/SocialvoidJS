@@ -100,9 +100,6 @@ export class InvalidFileForProfilePicture extends SocialvoidError {}
 // Raised when the given filename is invalid
 export class InvalidFileName extends SocialvoidError {}
 
-// Raised when the given filename is invalid
-export class InvalidFileName extends SocialvoidError {}
-
 // The given geo location value is invalid or too long
 export class InvalidGeoLocation extends SocialvoidError {}
 
@@ -177,14 +174,13 @@ const map: { [key: string]: typeof SocialvoidError } = {
   "8456": InvalidClientPublicHash,
   "8462": InvalidFileForProfilePicture,
   "8471": InvalidFileName,
-  "8471": InvalidFileName,
   "8467": InvalidGeoLocation,
   "8464": InvalidHelpDocumentId,
   "8451": InvalidLastName,
   "8466": InvalidPageValue,
   "8449": InvalidPassword,
   "8454": InvalidPeerInput,
-  "8464": InvalidPlatform,
+  "8458": InvalidPlatform,
   "8455": InvalidPostText,
   "8461": InvalidSessionIdentification,
   "8468": InvalidUrlValue,
