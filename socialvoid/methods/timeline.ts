@@ -158,4 +158,64 @@ export class Timeline extends MethodBase {
       true,
     );
   }
+
+  /**
+   * Composes a repost of an existing post.
+   *
+   * @param post The original post ID or instance to repost.
+   */
+  repost(post: Post | string): Promise<Post> {
+    return this.client.invokeRequest(
+      new Request("timeline.repost", { post: typeof post === "string" ? post : post.id }),
+      true,
+    );
+  }
+
+  /**
+   * Composes a new post by quoting an existing post.
+   *
+   * @param post The original post ID or instance to quote.
+   */
+  quote(post: Post | string, text: string, attachments?: (string | Document)[]): Promise<Post> {
+    return this.client.invokeRequest(
+      new Request("timeline.quote", {
+        post: typeof post === "string" ? post : post.id,
+        text,
+        attachments: typeof attachments !== "undefined"
+          ? attachments.map((attachment) => {
+            if (typeof attachment === "string") {
+              return attachment;
+            }
+
+            return attachment.id;
+          })
+          : undefined,
+      }),
+      true,
+    );
+  }
+
+  /**
+   * Replies a post.
+   *
+   * @param post The post ID or instance to reply.
+   */
+  reply(post: Post | string, text: string, attachments?: (string | Document)[]): Promise<Post> {
+    return this.client.invokeRequest(
+      new Request("timeline.reply", {
+        post: typeof post === "string" ? post : post.id,
+        text,
+        attachments: typeof attachments !== "undefined"
+          ? attachments.map((attachment) => {
+            if (typeof attachment === "string") {
+              return attachment;
+            }
+
+            return attachment.id;
+          })
+          : undefined,
+      }),
+      true,
+    );
+  }
 }
