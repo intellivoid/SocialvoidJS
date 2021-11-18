@@ -6,9 +6,9 @@ import jsSHA from "jssha";
 import fetch from "node-fetch";
 import FormData from "form-data";
 
-// @ts-ignore
+// @ts-ignore: Node-side error
 globalThis.fetch = fetch;
-// @ts-ignore
+// @ts-ignore: Node-side error
 globalThis.FormData = FormData;
 
 export const isBrowser = typeof window !== "undefined";

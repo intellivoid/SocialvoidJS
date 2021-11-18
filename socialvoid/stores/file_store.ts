@@ -3,6 +3,7 @@ import { Store } from "./store.ts";
 import { readTextFileSync, writeTextFileSync } from "../deps.deno.ts";
 
 export class FileStore extends Store {
+  // deno-lint-ignore no-explicit-any
   data: { [key: string]: any };
 
   constructor(public readonly file: string) {
@@ -21,6 +22,7 @@ export class FileStore extends Store {
     }
   }
 
+  // deno-lint-ignore no-explicit-any
   set(key: string, value: any) {
     this.data[key] = value;
   }

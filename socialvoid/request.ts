@@ -3,6 +3,7 @@ export class Request {
 
   constructor(
     public method: string,
+    // deno-lint-ignore no-explicit-any
     public params?: any,
     public notification = false,
   ) {

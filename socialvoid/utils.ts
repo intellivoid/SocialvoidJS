@@ -33,6 +33,7 @@ export function answerChallenge(clientPrivateHash: string, challenge: string) {
 
 export const unixTimestampToDate = (unixTimestamp: number) => new Date(unixTimestamp * 1000);
 
+// deno-lint-ignore no-explicit-any
 export function parseResponses(body: any): Response | Response[] | undefined {
   if (!body) {
     return undefined;
@@ -44,7 +45,9 @@ export function parseResponses(body: any): Response | Response[] | undefined {
 
   return Array.isArray(body)
     ? body
+      // deno-lint-ignore no-explicit-any
       .filter((item: any) => "id" in item)
+      // deno-lint-ignore no-explicit-any
       .map((item: any) => new Response(item))
     : "id" in body
     ? new Response(body)
@@ -52,7 +55,7 @@ export function parseResponses(body: any): Response | Response[] | undefined {
 }
 
 export function serializeRequests(...requests: Request[]): string {
-  const toReturn: any[] = [];
+  const toReturn: (Request & { jsonrpc: "2.0" })[] = [];
 
   for (const request of requests) {
     toReturn.push({ ...request, jsonrpc: "2.0" });
@@ -65,7 +68,7 @@ export const newHash = () => {
   return bufferToHex(getRandomValues(32));
 };
 
-export const formFromObj = (obj: { [key: string]: any }) => {
+export const formFromObj = (obj: { [key: string]: FormDataEntryValue }) => {
   const form = new FormData();
 
   for (const i in obj) {

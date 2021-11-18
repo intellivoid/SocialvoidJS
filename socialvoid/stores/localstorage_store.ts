@@ -1,6 +1,7 @@
 import { IS_BROWSER } from "../constants.ts";
 import { Store } from "./store.ts";
 
+// deno-lint-ignore no-explicit-any
 function resolveToBeSet(toBeSet: any) {
   return JSON.stringify(toBeSet);
 }
@@ -22,6 +23,7 @@ export class LocalStorageStore extends Store {
     return key + this.id;
   }
 
+  // deno-lint-ignore no-explicit-any
   set(key: string, value: any) {
     localStorage.setItem(this.resolveKey(key), resolveToBeSet(value));
   }

@@ -20,6 +20,7 @@ export class BaseClient {
   ) {
   }
 
+  // deno-lint-ignore require-await
   async getCDNEndpoint(): Promise<string> {
     throw new Error("Not implemented");
   }
@@ -88,7 +89,7 @@ export class BaseClient {
     return stream ? await response.blob() : await response.arrayBuffer();
   }
 
-  async send(data: any) {
+  async send(data: string) {
     return await (
       await fetch(this.rpcEndpoint, {
         method: "POST",

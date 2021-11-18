@@ -8,6 +8,7 @@ export class CDN extends MethodBase {
    *
    * @param document The file, it can be a buffer or a readable stream.
    */
+  // deno-lint-ignore no-explicit-any
   async upload(document: any): Promise<Document> {
     const form = formFromObj({
       action: "upload",

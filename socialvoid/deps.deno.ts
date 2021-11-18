@@ -7,9 +7,11 @@ export const isBrowser = typeof Deno === "undefined";
 
 export const os = isBrowser ? "Browser" : Deno.build.os;
 
-export const writeTextFileSync = isBrowser ? (...args: any) => {} : Deno.writeTextFileSync;
+// deno-lint-ignore no-explicit-any
+export const writeTextFileSync = isBrowser ? (..._args: any) => {} : Deno.writeTextFileSync;
 
-export const readTextFileSync = isBrowser ? (...args: any) => "" : Deno.readTextFileSync;
+// deno-lint-ignore no-explicit-any
+export const readTextFileSync = isBrowser ? (..._args: any) => "" : Deno.readTextFileSync;
 
 export const getRandomValues = (size: number) => {
   return crypto.getRandomValues(new Uint8Array(size)).buffer;

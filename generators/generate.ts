@@ -62,7 +62,7 @@ for (const typ of types) {
 
   for (const param of typ.parameters) {
     typs += `// ${param.description}\n`;
-    typs += `${param.name}`;
+    typs += `"${param.name}"`;
 
     if (!param.required) {
       typs += "?";

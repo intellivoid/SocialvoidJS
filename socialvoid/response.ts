@@ -5,6 +5,7 @@ export class Response {
   success: boolean;
   error?: { code: number; message: string };
 
+  // deno-lint-ignore no-explicit-any
   constructor(public data: any) {
     if (!this.data.id) {
       throw new Error(`Got invalid data: ${data}`);
